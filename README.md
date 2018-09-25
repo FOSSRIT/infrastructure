@@ -1,7 +1,15 @@
-FOSSBox Toolbox
-===============
+FOSS@MAGIC infrastructure
+=========================
 
-This repository is intended to hold random scripts, tools, and community guides for different tasks over time. Anything that doesn't quite make sense putting anywhere else... "the kitchen sink".
+Set of scripts, playbooks, and other tools to automate and manage FOSS@MAGIC infrastructure
+
+
+## About
+
+This repository holds various scripts or other automation tools to manage the FOSS@MAGIC infrastructure.
+It also includes various scripts or other misc. tools to support the FOSS@MAGIC efforts.
+Changes to the infrastructure should be made via this repository.
+
 
 ## License
 
@@ -16,3 +24,7 @@ All code, scripts, or other technical / programmatic items in this repo are assu
 ![Creative Commons Attribution-ShareAlike 4.0 International License](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
 All guides, scripts, posts, or otherwise non-programmatic content in this repo is assumed to fall under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) unless otherwise stated.
+
+### Attribution
+
+This repo originally used the [wordpress-nginx_rhel7](https://github.com/ansible/ansible-examples/tree/master/wordpress-nginx_rhel7) role from [ansible-examples](https://github.com/ansible/ansible-examples).
