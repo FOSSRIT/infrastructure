@@ -1,0 +1,10 @@
+---
+- name: Install MariaDB, nginx, PHP-FPM, and WordPress
+  hosts: all
+  become: yes
+  roles:
+    - common
+    - mariadb
+    - nginx
+    - php-fpm
+    - wordpress
