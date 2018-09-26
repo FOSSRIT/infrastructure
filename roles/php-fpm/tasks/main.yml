@@ -1,22 +1,22 @@
 ---
-- name: Install php-fpm and deps
-  yum: name={{ item }} state=present
-  with_items:
-    - php
-    - php-fpm
-    - php-enchant
-    - php-IDNA_Convert
-    - php-mbstring
-    - php-mysql
-    - php-PHPMailer
-    - php-process
-    - php-simplepie
-    - php-xml
+- name: install php-fpm
+  package:
+    name:
+      - php72u-dba
+      - php72u-fpm
+      - php72u-mbstring
+      - php72u-process
+      - php72u-xml
+    state: present
 
-- name: Disable default pool
-  command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled creates=/etc/php-fpm.d/www.disabled
+- name: disable default pool
+  command: mv /etc/php-fpm.d/www.conf /etc/php-fpm.d/www.disabled
+  args:
+    creates: /etc/php-fpm.d/www.disabled
   notify: restart php-fpm
 
-- name: Copy php-fpm configuration
-  template: src=wordpress.conf dest=/etc/php-fpm.d/
+- name: copy php-fpm configuration
+  template:
+    src: wordpress.conf
+    dest: /etc/php-fpm.d/
   notify: restart php-fpm
