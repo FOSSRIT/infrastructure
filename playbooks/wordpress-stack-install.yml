@@ -1,0 +1,16 @@
+---
+- name: Install MariaDB, nginx, PHP-FPM, and WordPress
+  hosts: all
+  become: yes
+
+  vars:
+    wp_db_name: wordpress-foss-magic
+    wp_db_password: 'What is a more secure way to manage passwords in a public playbook?'
+    wp_db_user: wordpress-admin
+
+  roles:
+    - ../roles/common-centos/7
+    - ../roles/mariadb
+    - ../roles/nginx
+    - ../roles/php-fpm
+    - ../roles/wordpress

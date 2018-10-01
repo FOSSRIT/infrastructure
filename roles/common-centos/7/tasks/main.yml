@@ -1,0 +1,18 @@
+---
+- name: install EPEL and IUS repositories
+  package:
+    state: latest
+    name:
+      - epel-release
+      - https://centos7.iuscommunity.org/ius-release.rpm
+  
+- name: install firewalld
+  package:
+    name: firewalld
+    state: present
+
+- name: start and enable firewalld service
+  service:
+    name: firewalld
+    state: started
+    enabled: yes

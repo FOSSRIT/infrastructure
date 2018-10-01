@@ -9,6 +9,6 @@ Vagrant.configure("2") do |config|
   end
   # Provisioning configuration for Ansible.
   config.vm.provision :ansible do |ansible|
-    ansible.playbook = "roles/test-wordpress-stack-install.yml"
+    ansible.playbook = "playbooks/wordpress-stack-install.yml"
   end
 end
