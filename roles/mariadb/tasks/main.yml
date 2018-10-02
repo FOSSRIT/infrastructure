@@ -3,15 +3,15 @@
 
 - name: remove older versions of conflicting packages
   package:
+    state: absent
     name:
       - mariadb-libs
-    state: absent
 
 - name: install MariaDB
   package:
+    state: present
     name:
       - mariadb101u-server
-    state: present
 
 - name: copy MySQL configuration file
   template:
@@ -28,7 +28,7 @@
     group: mysql
     mode: 0644
 
-- name: start MariaDB service
+- name: start and enable MariaDB service
   service:
     name: mariadb
     state: started
@@ -37,6 +37,6 @@
 - name: add MariaDB firewalld rule
   firewalld:
     service: mysql
-    permanent: true
     state: enabled
     immediate: yes
+    permanent: true
