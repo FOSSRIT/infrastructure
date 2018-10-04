@@ -4,11 +4,22 @@
     name: nginx
     state: present
 
+- name: create directory for global configurations
+  file:
+    state: directory
+    path: /etc/nginx/global
+
+- name: copy global nginx configurations
+  template: src={{ item }} dest=/etc/nginx/global/{{ item }}
+  notify: restart nginx
+  with_items:
+    - restrictions.conf
+    - wordpress.conf
+
 - name: copy WordPress nginx configuration
   template:
-    src: wordpress.conf
-    dest: /etc/nginx/conf.d/wordpress.conf
-  notify: restart nginx
+    src: fossrit.jwf.io.conf
+    dest: /etc/nginx/conf.d/fossrit.jwf.io.conf
 
 - name: insert firewalld rule for nginx
   firewalld:
