@@ -1,0 +1,26 @@
+---
+- name: ensure target user ("{{ target_user }}") exists
+  user:
+    name: "{{ target_user }}"
+
+- name: create SSH config directories for target user (~/.ssh)
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.ssh"
+    owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0700
+
+- name: add SSH public key to authorized_keys for target user (~/.ssh/authorized_keys)
+  template: 
+    src: authorized_keys
+    dest: "{{ user_home_dir }}/.ssh/authorized_keys"
+    owner: "{{ target_user }}"
+    group: "{{ target_user }}"
+    mode: 0400
+
+- name: configure SSH server (/etc/ssh/sshd_config)
+  template: 
+    src: sshd_config
+    dest: "/etc/ssh/sshd_config"
+  notify: restart sshd
