@@ -38,7 +38,7 @@ SyslogFacility AUTHPRIV
 #LogLevel INFO
 
 # Authentication:
-AllowUsers jflory
+AllowUsers {{ sshd_config.login_permitted_users }}
 #LoginGraceTime 2m
 PermitRootLogin no
 #StrictModes yes
@@ -65,9 +65,8 @@ PermitRootLogin no
 #IgnoreRhosts yes
 
 # To disable tunneled clear text passwords, change to no here!
-#PasswordAuthentication yes
-#PermitEmptyPasswords no
 PasswordAuthentication no
+#PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
 #ChallengeResponseAuthentication yes
