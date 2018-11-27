@@ -1,0 +1,109 @@
+---
+- name: import Vault-encrypted variables with API tokens and Telegram chat IDs
+  include_vars: vault.yml
+
+- name: add yarn third-party repository
+  get_url:
+    dest: "/etc/yum.repos.d/"
+    url: "https://dl.yarnpkg.com/rpm/yarn.repo"
+    setype: system_conf_t
+    seuser: system_u
+
+- name: install nodejs and yarn
+  package:
+    state: present
+    name:
+      - nodejs
+      - yarn
+
+- name: create system user for Teleirc bots
+  user:
+    name: teleirc
+    comment: "system user to run RITlug/teleirc bots - do not use"
+    system: yes
+    home: "/usr/lib64/teleirc"
+    create_home: no
+
+- name: add target user to Teleirc admin group
+  user:
+    name: "{{ target_user }}"
+    groups: teleirc
+    append: yes
+
+- name: create root directory for Teleirc bots
+  file:
+    state: directory
+    path: "/usr/lib64/teleirc"
+    mode: 0755
+    owner: teleirc
+    group: teleirc
+    seuser: system_u
+
+- name: git clone/pull RITlug/teleirc
+  git:
+    repo: "https://github.com/RITlug/teleirc.git"
+    dest: "/usr/lib64/teleirc/{{ item.cn }}"
+    version: "{{ item.version }}"
+    force: yes
+  with_items:
+    - "{{ bots.minecon_agents }}"
+    - "{{ bots.musicbrainz }}"
+    - "{{ bots.rit_foss }}"
+    - "{{ bots.ritlug }}"
+    - "{{ bots.ritlug_teleirc }}"
+  notify:
+    - install build dependencies
+    - install runtime dependencies with yarn
+    - remove build dependencies
+    - restart teleirc
+
+- name: "set file permissions to teleirc:teleirc in /usr/lib64/teleirc/"
+  file:
+    state: directory
+    recurse: yes
+    path: "/usr/lib64/teleirc"
+    owner: teleirc
+    group: teleirc
+
+- name: add templated configuration
+  template:
+    src: env
+    dest: "/usr/lib64/teleirc/{{ item.cn }}/.env"
+    mode: 0640
+    owner: teleirc
+    group: teleirc
+    seuser: system_u
+  with_items:
+    - "{{ bots.minecon_agents }}"
+    - "{{ bots.musicbrainz }}"
+    - "{{ bots.rit_foss }}"
+    - "{{ bots.ritlug }}"
+    - "{{ bots.ritlug_teleirc }}"
+  notify:
+    - restart teleirc
+
+- name: add templated systemd unit file
+  template:
+    src: teleirc.service
+    dest: "/usr/lib/systemd/system/teleirc-{{ item.cn }}.service"
+    mode: 0644
+    seuser: system_u
+    setype: systemd_unit_file_t
+  with_items:
+    - "{{ bots.minecon_agents }}"
+    - "{{ bots.musicbrainz }}"
+    - "{{ bots.rit_foss }}"
+    - "{{ bots.ritlug }}"
+    - "{{ bots.ritlug_teleirc }}"
+
+- name: start/enable each Teleirc systemd unit file
+  service:
+    name: teleirc-{{ item.cn }}
+    state: started
+    enabled: yes
+  with_items:
+    - "{{ bots.minecon_agents }}"
+    - "{{ bots.musicbrainz }}"
+    - "{{ bots.rit_foss }}"
+    - "{{ bots.ritlug }}"
+    - "{{ bots.ritlug_teleirc }}"
