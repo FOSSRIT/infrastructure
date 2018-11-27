@@ -1,0 +1,24 @@
+---
+- name: add EPEL and IUS repositories
+  package:
+    state: latest
+    name:
+      - epel-release
+      - https://centos7.iuscommunity.org/ius-release.rpm
+
+- name: install base packages
+  package:
+    state: latest
+    name:
+      - https://repos.influxdata.com/centos/7Server/x86_64/stable/telegraf-1.8.0-1.x86_64.rpm
+      - certbot
+      - duply
+      - git
+      - htop
+      - python36u
+      - python36u-pip
+
+- name: enable SELinux
+  selinux:
+    policy: targeted
+    state: enforcing
