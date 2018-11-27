@@ -1,0 +1,11 @@
+---
+- name: provision Teleirc bridge bots
+  hosts: irc-lug.rit.edu
+  become: yes
+
+  roles:
+    - base/centos-7
+    - firewalld
+    - sshd
+    - teleirc
+    - yum-cron

@@ -1,0 +1,59 @@
+###############################################################################
+#                                                                             #
+#           THIS FILE IS MANAGED BY ANSIBLE! CHANGES ARE OVERWRITTEN.         #
+#                   https://github.com/jwflory/infrastructure                 #
+#                                                                             #
+###############################################################################
+
+###############################################################################
+#                                                                             #
+#                       IRC configuration settings                            #
+#                                                                             #
+###############################################################################
+
+IRC_BLACKLIST="{{ item.irc_blacklist }}"
+IRC_BOT_NAME={{ item.irc_bot_name }}
+IRC_CHANNEL={{ item.irc_channel }}
+IRC_SEND_STICKER_EMOJI=true
+IRC_PREFIX="<"
+IRC_SUFFIX=">"
+IRC_SERVER={{ item.irc_server }}
+IRC_NICKSERV_SERVICE={{ item.irc_nickserv_service }}
+IRC_NICKSERV_PASS="{{ item.irc_nickserv_password }}"
+
+
+###############################################################################
+#                                                                             #
+#                     Telegram configuration settings                         #
+#                                                                             #
+###############################################################################
+
+TELEIRC_TOKEN={{ item.teleirc_token }}
+MAX_MESSAGES_PER_MINUTE=20
+SHOW_ACTION_MESSAGE=true
+SHOW_JOIN_MESSAGE=false
+SHOW_KICK_MESSAGE=true
+SHOW_LEAVE_MESSAGE=false
+TELEGRAM_CHAT_ID={{ item.teleirc_chat_id }}
+
+
+###############################################################################
+#                                                                             #
+#                      Imgur configuration settings                           #
+#                                                                             #
+###############################################################################
+
+USE_IMGUR_FOR_IMAGES=true
+IMGUR_CLIENT_ID={{ item.imgur_client_id }}
+
+
+###############################################################################
+#                                                                             #
+#                      Misc. required env variables                           #
+#                -- not meant for user config, don't touch --                 #
+#                                                                             #
+###############################################################################
+
+# https://github.com/yagop/node-telegram-bot-api/issues/319#issuecomment-324963294
+NTBA_FIX_319=1
+

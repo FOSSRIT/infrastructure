@@ -1,0 +1,37 @@
+---
+- name: install build dependencies
+  package:
+    state: present
+    name:
+      - gcc-c++
+      - libicu-devel
+
+- name: install runtime dependencies with yarn
+  become_user: teleirc
+  command: "yarn"
+  args:
+    chdir: "/usr/lib64/teleirc/{{ item.cn }}/"
+  with_items:
+    - "{{ bots.minecon_agents }}"
+    - "{{ bots.musicbrainz }}"
+    - "{{ bots.rit_foss }}"
+    - "{{ bots.ritlug }}"
+    - "{{ bots.ritlug_teleirc }}"
+
+- name: remove build dependencies
+  package:
+    state: absent
+    name:
+      - gcc-c++
+      - libicu-devel
+
+- name: restart teleirc
+  service:
+    name: "teleirc-{{ item.cn }}.service"
+    state: restarted
+  with_items:
+    - "{{ bots.minecon_agents }}"
+    - "{{ bots.musicbrainz }}"
+    - "{{ bots.rit_foss }}"
+    - "{{ bots.ritlug }}"
+    - "{{ bots.ritlug_teleirc }}"
