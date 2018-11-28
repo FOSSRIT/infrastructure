@@ -11,15 +11,15 @@
 #                                                                             #
 ###############################################################################
 
-IRC_BLACKLIST="{{ item.irc_blacklist }}"
-IRC_BOT_NAME={{ item.irc_bot_name }}
-IRC_CHANNEL={{ item.irc_channel }}
+IRC_BLACKLIST="{{ item.value.irc_blacklist }}"
+IRC_BOT_NAME={{ item.value.irc_bot_name }}
+IRC_CHANNEL={{ item.value.irc_channel }}
 IRC_SEND_STICKER_EMOJI=true
 IRC_PREFIX="<"
 IRC_SUFFIX=">"
-IRC_SERVER={{ item.irc_server }}
-IRC_NICKSERV_SERVICE={{ item.irc_nickserv_service }}
-IRC_NICKSERV_PASS="{{ item.irc_nickserv_password }}"
+IRC_SERVER={{ item.value.irc_server }}
+IRC_NICKSERV_SERVICE={{ item.value.irc_nickserv_service }}
+IRC_NICKSERV_PASS="{{ item.value.irc_nickserv_password }}"
 
 
 ###############################################################################
@@ -28,13 +28,13 @@ IRC_NICKSERV_PASS="{{ item.irc_nickserv_password }}"
 #                                                                             #
 ###############################################################################
 
-TELEIRC_TOKEN={{ item.teleirc_token }}
+TELEIRC_TOKEN={{ item.value.teleirc_token }}
 MAX_MESSAGES_PER_MINUTE=20
 SHOW_ACTION_MESSAGE=true
 SHOW_JOIN_MESSAGE=false
 SHOW_KICK_MESSAGE=true
 SHOW_LEAVE_MESSAGE=false
-TELEGRAM_CHAT_ID={{ item.teleirc_chat_id }}
+TELEGRAM_CHAT_ID={{ item.value.teleirc_chat_id }}
 
 
 ###############################################################################
@@ -44,7 +44,7 @@ TELEGRAM_CHAT_ID={{ item.teleirc_chat_id }}
 ###############################################################################
 
 USE_IMGUR_FOR_IMAGES=true
-IMGUR_CLIENT_ID={{ item.imgur_client_id }}
+IMGUR_CLIENT_ID={{ item.value.imgur_client_id }}
 
 
 ###############################################################################

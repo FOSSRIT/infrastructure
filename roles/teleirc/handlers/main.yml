@@ -10,13 +10,8 @@
   become_user: teleirc
   command: "yarn"
   args:
-    chdir: "/usr/lib64/teleirc/{{ item.cn }}/"
-  with_items:
-    - "{{ bots.minecon_agents }}"
-    - "{{ bots.musicbrainz }}"
-    - "{{ bots.rit_foss }}"
-    - "{{ bots.ritlug }}"
-    - "{{ bots.ritlug_teleirc }}"
+    chdir: "/usr/lib64/teleirc/{{ item.value.cn }}/"
+  loop: "{{ bots|dict2items }}"
 
 - name: remove build dependencies
   package:
@@ -27,11 +22,6 @@
 
 - name: restart teleirc
   service:
-    name: "teleirc-{{ item.cn }}.service"
+    name: "teleirc-{{ item.value.cn }}.service"
     state: restarted
-  with_items:
-    - "{{ bots.minecon_agents }}"
-    - "{{ bots.musicbrainz }}"
-    - "{{ bots.rit_foss }}"
-    - "{{ bots.ritlug }}"
-    - "{{ bots.ritlug_teleirc }}"
+  loop: "{{ bots|dict2items }}"
