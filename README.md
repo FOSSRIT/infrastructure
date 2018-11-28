@@ -17,7 +17,7 @@ Changes to the infrastructure should be made via this repository.
 As of now, there is only one playbook to use:
 
 ```sh
-ansible-playbook-3 -u $USER -K playbooks/fossrit.yml
+ansible-playbook-3 -u $USER -K playbooks/irc-lug.yml
 ```
 
 
