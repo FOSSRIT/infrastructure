@@ -1,12 +1,12 @@
 [Unit]
-Description=Teleirc: Telegram + IRC bridge bot (for: {{ item.cn }})
+Description=Teleirc: Telegram + IRC bridge bot (for: {{ item.value.cn }})
 Requires=network.target
 After=multi-user.target
 
 [Service]
 Type=simple
 User=teleirc
-WorkingDirectory=/usr/lib64/teleirc/{{ item.cn }}
+WorkingDirectory=/usr/lib64/teleirc/{{ item.value.cn }}
 ExecStart=/usr/bin/node teleirc.js
 Restart=always
 RestartSec=60
