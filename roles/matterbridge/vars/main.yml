@@ -1,0 +1,55 @@
+---
+default_irc_bot_nick: slack-ritlug
+default_irc_ignore_nicks: "cowsaybot"
+default_irc_network_name: freenode
+default_irc_network_server: irc.freenode.net:6697
+
+default_slack_api_token: "{{ vault_slack_api_token }}"
+default_slack_ignore_nicks: ""
+default_slack_team_name: rit-lug
+
+matterbridge_config:
+  binary_sha512sum: 00f09bd083b7bd772aeae0e2d2cb46f6886b3ee6b51300c2b68aa4249bc59a1d6bbcbc7662ff0bc191ff99ee6216aa7e97f7529ff094226b512a796264063efd
+  version: v1.12.0
+
+  rit:
+    irc:
+      bot_name: mb-rit
+      channel: "#rit"
+    slack:
+      channel: random
+
+  rit_foss:
+    irc:
+      bot_name: mb-ritfoss
+      channel: "#rit-foss"
+    slack:
+      channel: foss
+
+  rit_lug_sysadmin:
+    irc:
+      bot_name: mb-ritlug-sysadm
+      channel: "#rit-lug-sysadmin"
+    slack:
+      channel: sysadmin
+
+  rit_tigeros:
+    irc:
+      bot_name: mb-tigeros
+      channel: "#rit-tigeros"
+    slack:
+      channel: tigeros
+
+  ritlug:
+    irc:
+      bot_name: mb-ritlug
+      channel: "#ritlug"
+    slack:
+      channel: general
+
+  ritlug_teleirc:
+    irc:
+      bot_name: mb-teleirc
+      channel: "#ritlug-teleirc"
+    slack:
+      channel: teleirc

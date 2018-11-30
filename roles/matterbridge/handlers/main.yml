@@ -1,0 +1,5 @@
+---
+- name: restart matterbridge
+  service:
+    name: matterbridge
+    state: restarted

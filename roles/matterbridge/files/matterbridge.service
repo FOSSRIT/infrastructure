@@ -1,0 +1,16 @@
+[Unit]
+Description=Matterbridge
+Requires=network.target
+After=multi-user.target
+
+[Service]
+Type=simple
+User=matterbridge
+Group=matterbridge
+WorkingDirectory=/usr/lib64/matterbridge
+ExecStart=/usr/local/bin/matterbridge -conf matterbridge.toml
+Restart=always
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
