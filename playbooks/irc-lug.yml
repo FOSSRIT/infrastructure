@@ -6,6 +6,7 @@
   roles:
     - base/centos-7
     - firewalld
+    - matterbridge
     - sshd
     - teleirc
     - yum-cron

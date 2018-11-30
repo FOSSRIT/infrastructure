@@ -1,0 +1,74 @@
+---
+- name: import Vault-encrypted variables
+  include_vars: vault.yml
+
+- name: install golang (v1.8+ required)
+  package:
+    state: present
+    name: golang
+
+- name: create matterbridge system user
+  user:
+    name: matterbridge
+    comment: "system user to run 42wim/matterbridge - do not use"
+    system: yes
+    home: "/usr/lib64/matterbridge"
+    create_home: no
+
+- name: add target user to matterbridge group
+  user:
+    name: "{{ target_user }}"
+    groups: matterbridge
+    append: yes
+
+- name: create matterbridge root directory
+  file:
+    state: directory
+    path: "/usr/lib64/matterbridge"
+    mode: 0755
+    owner: matterbridge
+    group: matterbridge
+    seuser: system_u
+
+# Manually retrieve a sha512sum hash for a new release when updating this task.
+- name: download matterbridge binary
+  get_url:
+    url: https://github.com/42wim/matterbridge/releases/download/{{ matterbridge_config.version }}/matterbridge-linux-amd64
+    checksum: "sha512:{{ matterbridge_config.binary_sha512sum }}"
+    backup: yes
+    dest: /usr/local/bin/matterbridge
+    mode: 0755
+    seuser: system_u
+    setype: bin_t
+
+- name: "set file permissions to matterbridge:matterbridge in /usr/lib64/matterbridge/"
+  file:
+    state: directory
+    recurse: yes
+    path: "/usr/lib64/matterbridge"
+    owner: matterbridge
+    group: matterbridge
+
+- name: add matterbridge.toml
+  template:
+    src: matterbridge.toml
+    dest: "/usr/lib64/matterbridge/matterbridge.toml"
+    mode: 0640
+    owner: matterbridge
+    group: matterbridge
+    seuser: system_u
+  notify: restart matterbridge
+
+- name: add matterbridge.service (systemd unit file)
+  copy:
+    src: matterbridge.service
+    dest: "/usr/lib/systemd/system/matterbridge.service"
+    mode: 0644
+    seuser: system_u
+    setype: systemd_unit_file_t
+
+- name: start/enable matterbridge.service
+  service:
+    name: matterbridge
+    state: started
+    enabled: yes
