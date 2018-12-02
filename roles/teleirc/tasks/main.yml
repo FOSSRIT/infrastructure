@@ -1,6 +1,15 @@
 ---
+- name: import global variables
+  include_vars:
+    dir: "{{ inventory_dir }}/group_vars/"
+
 - name: import Vault-encrypted variables with API tokens and Telegram chat IDs
   include_vars: vault.yml
+
+- name: add nodejs third-party repository
+  package:
+    state: present
+    name: https://rpm.nodesource.com/pub_10.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
 - name: add yarn third-party repository
   get_url:
