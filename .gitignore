@@ -1,5 +1,5 @@
-.vagrant/*
-*.pyc
+**/.vagrant
 *.retry
 *.swp
-*.swo
+
+playbooks/vagrant-test.yml
