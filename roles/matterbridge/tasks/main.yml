@@ -40,6 +40,7 @@
     mode: 0755
     seuser: system_u
     setype: bin_t
+  notify: restart matterbridge
 
 - name: "set file permissions to matterbridge:matterbridge in /usr/lib64/matterbridge/"
   file:
