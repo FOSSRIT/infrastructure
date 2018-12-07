@@ -1,5 +1,5 @@
 ---
-- name: provision Teleirc bridge bots
+- name: provision irc-lug.rit.edu
   hosts: irc-lug.rit.edu
   become: yes
 
