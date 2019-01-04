@@ -1,26 +1,26 @@
 ---
 - name: ensure authorized users exist
   user:
-    name: "{{ item }}"
-  loop: "{{ users }}"
+    name: "{{ item.key }}"
+  loop: "{{ authorized_users|dict2items }}"
 
 - name: create SSH config directories for authorized users (~/.ssh)
   file:
     state: directory
-    path: "/home/{{ item }}/.ssh"
-    owner: "{{ item }}"
-    group: "{{ item }}"
+    path: "{{ item.value.home_dir }}/.ssh"
+    owner: "{{ item.key }}"
+    group: "{{ item.key }}"
     mode: 0700
-  loop: "{{ users }}"
+  loop: "{{ authorized_users|dict2items }}"
 
-- name: add SSH public key to authorized_keys for target user (~/.ssh/authorized_keys)
+- name: add SSH public keys for authorized users (~/.ssh/authorized_keys)
   template: 
-    src: "authorized_keys.{{ item }}"
-    dest: "/home/{{ item }}/.ssh/authorized_keys"
-    owner: "{{ item }}"
-    group: "{{ item }}"
+    src: authorized_keys
+    dest: "{{ item.value.home_dir }}/.ssh/authorized_keys"
+    owner: "{{ item.key }}"
+    group: "{{ item.key }}"
     mode: 0400
-  loop: "{{ users }}"
+  loop: "{{ authorized_users|dict2items }}"
 
 - name: configure SSH server (/etc/ssh/sshd_config)
   template: 
