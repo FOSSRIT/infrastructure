@@ -20,6 +20,7 @@ IRC_SUFFIX=">"
 IRC_SERVER={{ item.value.irc_server }}
 IRC_NICKSERV_SERVICE={{ item.value.irc_nickserv_service }}
 IRC_NICKSERV_PASS="{{ item.value.irc_nickserv_password }}"
+IRC_EDITED_PREFIX="(edited) "
 
 
 ###############################################################################
