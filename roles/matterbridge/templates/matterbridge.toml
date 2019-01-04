@@ -31,11 +31,8 @@ ColorNicks=true
 #OPTIONAL
 IgnoreNicks="{{ default_irc_ignore_nicks }}"
 
-# TODO: Revisit this later?
 #RemoteNickFormat defines how remote users appear on this bridge 
-#See [general] config section for default options
-#The string "{NOPINGNICK}" (case sensitive) will be replaced by the actual nick / username, but with a ZWSP inside the nick, so the irc user with the same nick won't get pinged. See https://github.com/42wim/matterbridge/issues/175 for more information
-RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
+RemoteNickFormat="[{PROTOCOL}] <{NOPINGNICK}> "
 
 #Enable to show users joins/parts from other bridges 
 #Currently works for messages from the following bridges: irc, mattermost, slack
