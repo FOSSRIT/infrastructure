@@ -14,7 +14,7 @@
   loop: "{{ authorized_users|dict2items }}"
 
 - name: add SSH public keys for authorized users (~/.ssh/authorized_keys)
-  template: 
+  template:
     src: authorized_keys
     dest: "{{ item.value.home_dir }}/.ssh/authorized_keys"
     owner: "{{ item.key }}"
@@ -23,7 +23,7 @@
   loop: "{{ authorized_users|dict2items }}"
 
 - name: configure SSH server (/etc/ssh/sshd_config)
-  template: 
+  template:
     src: sshd_config
     dest: "/etc/ssh/sshd_config"
   notify: restart sshd
