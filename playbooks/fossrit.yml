@@ -1,0 +1,10 @@
+---
+- name: synchronize fossrit
+  hosts: fossrit.community
+  become: yes
+
+  roles:
+    - base/centos-7
+    - firewalld
+    - sshd
+    - yum-cron
