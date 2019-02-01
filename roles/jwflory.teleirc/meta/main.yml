@@ -13,12 +13,12 @@ galaxy_info:
     - 7
 
   galaxy_tags:
-    - irc
-    - javascript
-    - nodejs
-    - rit
-    - ritlug
-    - rochester
-    - telegram
+  - irc
+  - javascript
+  - nodejs
+  - rit
+  - ritlug
+  - rochester
+  - telegram
 
 dependencies: []

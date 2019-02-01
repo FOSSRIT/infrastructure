@@ -8,4 +8,3 @@ vault_bots:
     vault_irc_nickserv_password: ""
     vault_teleirc_token: "000000000:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     vault_teleirc_chat_id: "-0000000000000"
-
