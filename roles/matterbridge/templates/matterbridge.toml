@@ -26,20 +26,20 @@ MessageSplit=true
 #Only works in IRC right now.
 ColorNicks=true
 
-#Nicks you want to ignore. 
+#Nicks you want to ignore.
 #Messages from those users will not be sent to other bridges.
 #OPTIONAL
 IgnoreNicks="{{ default_irc_ignore_nicks }}"
 
-#RemoteNickFormat defines how remote users appear on this bridge 
-RemoteNickFormat="[{PROTOCOL}] <{NOPINGNICK}> "
+#RemoteNickFormat defines how remote users appear on this bridge
+RemoteNickFormat="<{NOPINGNICK}> "
 
-#Enable to show users joins/parts from other bridges 
+#Enable to show users joins/parts from other bridges
 #Currently works for messages from the following bridges: irc, mattermost, slack
 #OPTIONAL (default false)
 ShowJoinPart=true
 
-#Enable to show topic changes from other bridges 
+#Enable to show topic changes from other bridges
 #Only works hiding/show topic changes from slack bridge for now
 #OPTIONAL (default false)
 ShowTopicChange=true
@@ -68,14 +68,14 @@ IconURL="https://robohash.org/{NICK}.png?size=48x48"
 EditSuffix=" (edited)"
 
 #Whether to prefix messages from other bridges to mattermost with RemoteNickFormat
-#Useful if username overrides for incoming webhooks isn't enabled on the 
-#slack server. If you set PrefixMessagesWithNick to true, each message 
-#from bridge to Slack will by default be prefixed by "bridge-" + nick. You can, 
-#however, modify how the messages appear, by setting (and modifying) RemoteNickFormat 
+#Useful if username overrides for incoming webhooks isn't enabled on the
+#slack server. If you set PrefixMessagesWithNick to true, each message
+#from bridge to Slack will by default be prefixed by "bridge-" + nick. You can,
+#however, modify how the messages appear, by setting (and modifying) RemoteNickFormat
 #OPTIONAL (default false)
 PrefixMessagesWithNick=false
 
-#Nicks you want to ignore. 
+#Nicks you want to ignore.
 #Messages from those users will not be sent to other bridges.
 #OPTIONAL
 IgnoreNicks="{{ default_slack_ignore_nicks }}"
@@ -96,7 +96,7 @@ PreserveThreading=true
 ## RELOADABLE SETTINGS
 ## Settings below can be reloaded by editing the file
 
-#RemoteNickFormat defines how remote users appear on this bridge 
+#RemoteNickFormat defines how remote users appear on this bridge
 #The string "{NICK}" (case sensitive) will be replaced by the actual nick / username.
 #The string "{BRIDGE}" (case sensitive) will be replaced by the sending bridge
 #The string "{LABEL}" (case sensitive) will be replaced by label= field of the sending bridge
