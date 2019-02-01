@@ -1,0 +1,24 @@
+galaxy_info:
+  role_name: teleirc
+  author: Justin W. Flory
+  description: Deploy RITlug/teleirc chat bots to bridge IRC channels and Telegram groups
+
+  license: MPLv2
+
+  min_ansible_version: 2.7
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+
+  galaxy_tags:
+    - irc
+    - javascript
+    - nodejs
+    - rit
+    - ritlug
+    - rochester
+    - telegram
+
+dependencies: []

@@ -1,0 +1,7 @@
+---
+- name: import global variables
+  include_vars:
+    dir: "{{ inventory_dir }}/group_vars/"
+
+- name: import Vault-encrypted variables with API tokens and Telegram chat IDs
+  include_vars: vault.yml

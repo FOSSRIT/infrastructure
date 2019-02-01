@@ -1,0 +1,11 @@
+---
+# encrypt this with Ansible Vault before committing!
+
+vault_default_imgur_client_id: "000000000000000"
+
+vault_bots:
+  my_example_bot:
+    vault_irc_nickserv_password: ""
+    vault_teleirc_token: "000000000:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    vault_teleirc_chat_id: "-0000000000000"
+

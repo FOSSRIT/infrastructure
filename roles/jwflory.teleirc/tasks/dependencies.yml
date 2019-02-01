@@ -1,0 +1,19 @@
+---
+- name: add nodejs third-party repository
+  package:
+    state: present
+    name: https://rpm.nodesource.com/pub_10.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
+
+- name: add yarn third-party repository
+  get_url:
+    dest: "/etc/yum.repos.d/"
+    url: "https://dl.yarnpkg.com/rpm/yarn.repo"
+    setype: system_conf_t
+    seuser: system_u
+
+- name: install nodejs and yarn
+  package:
+    state: present
+    name:
+      - nodejs
+      - yarn

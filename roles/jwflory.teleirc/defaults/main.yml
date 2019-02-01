@@ -1,0 +1,5 @@
+---
+# defaults file for teleirc
+default_irc_server: chat.freenode.net
+default_irc_nickserv_service: NickServ
+default_version: v1.2.2
