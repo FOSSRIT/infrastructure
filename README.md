@@ -22,7 +22,17 @@ ansible-playbook-3 -u $USER -K playbooks/irc-lug.yml
 ```
 
 
-## License
+## Legal
+
+### Project license: MPLv2
 
 Licensed under the [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/) unless otherwise stated.
+
+### Third-party software
+
+These projects are used, or were used at one time, by this project.
+Thanks for the work of those who shared changes in the open. :tada:
+
+* [ansible/ansible-examples](https://github.com/ansible/ansible-examples "ansible/ansible-examples: A few starter examples of ansible playbooks, to show features and how they work together.") ([wordpress-nginx_rhel7](https://github.com/ansible/ansible-examples/tree/master/wordpress-nginx_rhel7 "ansible/ansible-examples: WordPress+Nginx+PHP-FPM+MariaDB Deployment"))
+* [jwflory/ansible-role-teleirc](https://github.com/jwflory/ansible-role-teleirc "jwflory/ansible-role-teleirc: Ansible role to deploy RITlug/teleirc chat bots to bridge IRC channels and Telegram groups")
 
