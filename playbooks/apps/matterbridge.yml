@@ -1,0 +1,7 @@
+---
+- name: synchronize matterbridge deployment state to irc-lug.rit.edu
+  hosts: irc-lug.rit.edu
+  become: yes
+
+  roles:
+    - matterbridge
