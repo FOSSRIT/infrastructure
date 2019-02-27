@@ -1,7 +1,7 @@
 FOSS@MAGIC infrastructure
 =========================
 
-[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License: BSD 3-Clause License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Build Status](https://travis-ci.org/FOSSRIT/infrastructure.svg?branch=master)](https://travis-ci.org/FOSSRIT/infrastructure)
 
 Set of scripts, playbooks, and other tools to automate and manage FOSS@MAGIC infrastructure
@@ -24,11 +24,16 @@ ansible-playbook-3 -u $USER -K playbooks/irc-lug.yml
 
 ## Legal
 
-### Project license: MPLv2
+### Project license: BSD 3-Clause License
 
-Licensed under the [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/) unless otherwise stated.
+This repository is licensed under the [BSD 3-Clause License](https://choosealicense.com/licenses/bsd-3-clause/ "BSD 3-Clause “New” or “Revised” License").
+Reuse anything you want in your own configurations.
+If you publish any remixed work online, add a link back here to your README please. :memo:
+And you can say :wave: to me in your git commit.
+Tag me!
+`@jwflory`
 
-### Third-party software
+### Attributions
 
 These projects are used, or were used at one time, by this project.
 Thanks for the work of those who shared changes in the open. :tada:
