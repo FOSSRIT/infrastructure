@@ -170,6 +170,18 @@ enable=true
     channel="{{ matterbridge_config.rit_foss.slack.channel }}"
 
 [[gateway]]
+name="gateway_rit_lug_projects"
+enable=true
+
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="{{ matterbridge_config.rit_lug_projects.irc.channel }}"
+
+    [[gateway.inout]]
+    account="slack.{{ default_slack_team_name }}"
+    channel="{{ matterbridge_config.rit_lug_projects.slack.channel }}"
+
+[[gateway]]
 name="gateway_rit_lug_sysadmin"
 enable=true
 

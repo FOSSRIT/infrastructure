@@ -26,6 +26,13 @@ matterbridge_config:
     slack:
       channel: foss
 
+  rit_lug_projects:
+    irc:
+      bot-name: mb-ritlug-proj
+      channel: "#rit-lug-projects"
+    slack:
+      channel: projects
+
   rit_lug_sysadmin:
     irc:
       bot_name: mb-ritlug-sysadm
