@@ -41,7 +41,7 @@
     setype: systemd_unit_file_t
   loop: "{{ bots|dict2items }}"
 
-- name: start/enable each Teleirc systemd unit file
+- name: start/enable each TeleIRC systemd unit file
   service:
     name: teleirc-{{ item.value.cn }}
     state: started

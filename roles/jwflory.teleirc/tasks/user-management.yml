@@ -1,5 +1,5 @@
 ---
-- name: create system user for Teleirc bots
+- name: create system user for TeleIRC bots
   user:
     name: teleirc
     comment: "system user to run RITlug/teleirc bots - do not use"
@@ -7,13 +7,13 @@
     home: "/usr/lib64/teleirc"
     create_home: no
 
-- name: add target user to Teleirc admin group
+- name: add target user to TeleIRC admin group
   user:
     name: "{{ target_user }}"
     groups: teleirc
     append: yes
 
-- name: create root directory for Teleirc bots
+- name: create root directory for TeleIRC bots
   file:
     state: directory
     path: "/usr/lib64/teleirc"

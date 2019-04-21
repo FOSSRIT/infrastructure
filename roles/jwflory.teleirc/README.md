@@ -31,7 +31,7 @@ default_version: v1.2.2
 
 * **`default_irc_server`**: Default IRC server to connect to (defaults to Freenode)
 * **`default_irc_nickserv_service`**: Default authentication service for IRC server (defaults to NickServ)
-* **`default_version`**: Default version of Teleirc to deploy (corresponds to git tag releases in upstream project)
+* **`default_version`**: Default version of TeleIRC to deploy (corresponds to git tag releases in upstream project)
 
 ### `vars/main.yml`
 
@@ -52,10 +52,10 @@ bots:
 ```
 
 * **`bots`**: List of all bots
-* **`bots.my_example_bot`**: Example of a single Teleirc bot
+* **`bots.my_example_bot`**: Example of a single TeleIRC bot
 * **`bots.my_example_bot.cn`**: Common name. Used for directory names, systemd service name, and more.
 * **`bots.my_example_bot.irc_blacklist`**: Comma-separated string of IRC nicks to ignore
-* **`bots.my_example_bot.irc_bot_name`**: IRC nick of Teleirc bridge bot
+* **`bots.my_example_bot.irc_bot_name`**: IRC nick of TeleIRC bridge bot
 * **`bots.my_example_bot.irc_channel`**: IRC channel for bot to join
 * **`bots.my_example_bot.irc_server`**: IRC server for bot to connect to (uses `defaults/main.yml`)
 * **`bots.my_example_bot.irc_nickserv_service`**: IRC account authentication method (uses `defaults/main.yml`)
@@ -63,7 +63,7 @@ bots:
 * **`bots.my_example_bot.teleirc_token`**: _See below_
 * **`bots.my_example_bot.teleirc_chat_id`**: _See below_
 * **`bots.my_example_bot.imgur_client_id`**: _See below_
-* **`bots.my_example_bot.version`**: What version of Teleirc to deploy (uses `defaults/main.yml`)
+* **`bots.my_example_bot.version`**: What version of TeleIRC to deploy (uses `defaults/main.yml`)
 
 ### `vars/vault.yml`
 
@@ -81,7 +81,7 @@ vault_bots:
 
 * **`default_imgur_client_id`**: Imgur API client ID to upload images from Telegram to Imgur
 * **`vault_bots`**: List of all bots
-* **`vault_bots.my_example_bot`**: Example of secrets for a single Teleirc bot
+* **`vault_bots.my_example_bot`**: Example of secrets for a single TeleIRC bot
 * **`vault_bots.my_example_bot.vault_irc_nickserv_password`**: Password to NickServ account on IRC server
 * **`vault_bots.my_example_bot.vault_teleirc_token`**: Telegram API bot token provided by the BotFather
 * **`vault_bots.my_example_bot.vault_teleirc_chat_id`**: Telegram chat ID of group for bridging to IRC
