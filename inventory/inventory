@@ -1,6 +1,9 @@
 estrella.justinwflory.com
-fossrit.community
 irc-lug.rit.edu
 
 [staging]
 estrella
+
+[centos7]
+estrella
+irc-lug.rit.edu
