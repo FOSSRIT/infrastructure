@@ -4,7 +4,7 @@
   become: yes
 
   roles:
-    - base/centos-7
-    - firewalld
-    - sshd
-    - yum-cron
+    - { role: base/centos-7, tags: base }
+    - { role: firewalld, tags: firewalld }
+    - { role: sshd, tags: sshd }
+    - { role: yum-cron, tags: yum-cron }

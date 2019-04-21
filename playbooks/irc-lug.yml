@@ -1,12 +1,12 @@
 ---
-- name: provision irc-lug.rit.edu
+- name: synchronize irc-lug.rit.edu
   hosts: irc-lug.rit.edu
   become: yes
 
   roles:
-    - base/centos-7
-    - firewalld
-    - jwflory.teleirc
-    - matterbridge
-    - sshd
-    - yum-cron
+    - { role: base/centos-7, tags: base }
+    - { role: firewalld, tags: firewalld }
+    - { role: jwflory.teleirc, tags: teleirc }
+    - { role: matterbridge, tags: matterbridge }
+    - { role: sshd, tags: sshd }
+    - { role: yum-cron, tags: yum-cron }
