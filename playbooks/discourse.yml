@@ -1,0 +1,7 @@
+---
+- name: synchronize Discourse host
+  hosts: discourse
+  become: yes
+
+  roles:
+    - { role: sshd, tags: sshd }

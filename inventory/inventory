@@ -1,9 +1,9 @@
-estrella.justinwflory.com
-irc-lug.rit.edu
+[discourse]
+fossrit.community ansible_python_interpreter=/usr/bin/python3
 
 [staging]
-estrella
+estrella.justinwflory.com
 
 [centos7]
-estrella
+estrella.justinwflory.com
 irc-lug.rit.edu
