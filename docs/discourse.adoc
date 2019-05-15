@@ -1,0 +1,75 @@
+= Discourse
+
+This document explains how the FOSS@MAGIC Discourse site, https://fossrit.community[fossrit.community], is set up.
+It is divided into the following sections:
+
+. What is Discourse?
+. Hosting: DigitalOcean
+. Configuration: Docker-based deployment
+. Updates: How to update Discourse
+. Backups: Discourse and DigitalOcean
+
+
+== What is Discourse?
+
+https://www.discourse.org/[Discourse] is open source forum software developed by Civilized Discourse Construction Kit, Inc.
+In Fall 2018, FOSS@MAGIC student employee and RIT student https://twitter.com/jflory7[Justin W. Flory] set up a Discourse site for the FOSS@MAGIC community on https://fossrit.community[fossrit.community].
+This decision was approved by the RIT MAGIC Center staff.
+Since then, we use Discourse as a place for our community to congregate from around the world.
+It intends to be a hub of information and a place for discussion within the RIT FOSS community.
+
+
+[hosting]
+== Hosting: DigitalOcean
+
+The Discourse site is hosted on a https://www.digitalocean.com/[DigitalOcean] Droplet.
+The Droplet is managed through the _FOSS at RIT MAGIC_ team on DigitalOcean.
+The following individuals have access to the DigitalOcean team:
+
+* Brenda Schlageter (_owner_)
+* Justin W. Flory (_owner_)
+* Stephen Jacobs (_member, invite pending_)
+
+=== Hardware
+
+The Discourse site runs on an Ubuntu server.
+Size specs are as follows:
+
+* *CPU*: 1 vCPU
+* *RAM*: 2GB
+* *Disk*: 50GB SSD
+* *Region*: Toronto, Canada
+
+
+[configuration]
+== Configuration: Docker-based deployment
+
+Discourse only supports Docker-based deployment methods.
+Justin used the https://github.com/discourse/discourse/blob/master/docs/INSTALL-cloud.md[basic installation guide] provided by upstream.
+The DigitalOcean Droplet is still configured this way and no changes were made outside of the documented installation process.
+
+For the SMTP mail server settings, Justin provided an API key from his personal https://sendgrid.com/[SendGrid] account.
+This decision was made because of Discourse upstream's recommendations in their https://github.com/discourse/discourse/blob/master/docs/INSTALL-email.md[Recommended Email Providers for Discourse] document.
+
+
+[updates]
+== Updates: How to update Discourse
+
+Discourse updates are applied via the Discourse admin panel.
+Any user with admin privileges can upgrade the site.
+See the https://meta.discourse.org/t/how-do-i-manually-update-discourse-and-docker-image-to-latest/23325[upstream upgrade documentation] for more info on upgrading Discourse.
+
+
+[backups]
+== Backups: Discourse and DigitalOcean
+
+Two levels of backups are maintained: one locally by Discourse and one by DigitalOcean.
+All backups happen automatically and require no manual intervention.
+
+Discourse backups are made by the Discourse site.
+It is possible to roll the site back to these backups.
+This backup mechanism is recommended for Discourse upgrades or before testing configuration changes.
+
+DigitalOcean takes a weekly backup of the entire Droplet on Friday nights.
+These backups can be restored to the existing Droplet by clicking through the DigitalOcean admin interface.
+This backup mechanism is recommended in the event of catastrophic failure where the Discourse web interface cannot be reached.
