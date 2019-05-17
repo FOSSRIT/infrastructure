@@ -1,4 +1,7 @@
 ---
+authorized_users:
+  - jflory
+
 default_imgur_client_id: "{{ vault_default_imgur_client_id }}"
 default_irc_server: chat.freenode.net
 default_irc_nickserv_service: NickServ
@@ -54,6 +57,19 @@ bots:
     irc_nickserv_password: "{{ vault_bots.rit_foss_admin.vault_irc_nickserv_password }}"
     teleirc_token: "{{ vault_bots.rit_foss_admin.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_foss_admin.vault_teleirc_chat_id }}"
+    imgur_client_id: "{{ default_imgur_client_id }}"
+    version: "{{ default_version }}"
+
+  rit_librecorps:
+    cn: "rit-librecorps"
+    irc_blacklist: "CowSayBot"
+    irc_bot_name: tg-librecorps
+    irc_channel: "#rit-librecorps"
+    irc_server: "{{ default_irc_server }}"
+    irc_nickserv_service: "{{ default_irc_nickserv_service }}"
+    irc_nickserv_password: "{{ vault_bots.rit_librecorps.vault_irc_nickserv_password }}"
+    teleirc_token: "{{ vault_bots.rit_librecorps.vault_teleirc_token }}"
+    teleirc_chat_id: "{{ vault_bots.rit_librecorps.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
     version: "{{ default_version }}"
 
