@@ -104,6 +104,9 @@ None.
 
 [Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/ "Mozilla Public License – Mozilla")
 
+Author(s) accept changes made to `vars/` to be omitted in published derivative work, as these are understood to be deployment-specific.
+Modifications to other aspects of the Ansible Role that others could benefit from are expected to be open.
+
 
 ## Author Information
 

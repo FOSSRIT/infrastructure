@@ -29,8 +29,7 @@
     group: teleirc
     seuser: system_u
   loop: "{{ bots|dict2items }}"
-  notify:
-    - restart teleirc
+  notify: restart teleirc
 
 - name: add templated systemd unit file
   template:

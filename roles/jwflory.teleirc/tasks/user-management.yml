@@ -9,9 +9,10 @@
 
 - name: add target user to TeleIRC admin group
   user:
-    name: "{{ target_user }}"
+    name: "{{ item }}"
     groups: teleirc
     append: yes
+  loop: "{{ authorized_users }}"
 
 - name: create root directory for TeleIRC bots
   file:
