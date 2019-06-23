@@ -33,8 +33,8 @@
 # Manually retrieve a sha512sum hash for a new release when updating this task.
 - name: download matterbridge binary
   get_url:
-    url: https://github.com/42wim/matterbridge/releases/download/{{ matterbridge_config.version }}/matterbridge-linux-amd64
-    checksum: "sha512:{{ matterbridge_config.binary_sha512sum }}"
+    url: "https://github.com/42wim/matterbridge/releases/download/v{{ matterbridge_config.version }}/matterbridge-{{ matterbridge_config.version }}-linux-64bit"
+    checksum: "sha256:{{ matterbridge_config.binary_checksum }}"
     backup: yes
     dest: /usr/local/bin/matterbridge
     mode: 0755
