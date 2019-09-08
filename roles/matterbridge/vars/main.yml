@@ -10,7 +10,7 @@ default_slack_team_name: rit-lug
 
 matterbridge_config:
   binary_checksum: a86b4ad887092496da2af0be0abb7e3d5d4aaa87239434eccf72da91601c7a52
-  version: 1.15.1
+  version: 1.16.0
 
   rit:
     irc:
