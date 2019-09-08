@@ -9,7 +9,7 @@ default_slack_ignore_nicks: ""
 default_slack_team_name: rit-lug
 
 matterbridge_config:
-  binary_checksum: a86b4ad887092496da2af0be0abb7e3d5d4aaa87239434eccf72da91601c7a52
+  binary_checksum: "f9301cd86750814f4fa171c81581524e1d72f49e0b7307d72691787b17ddeaab"
   version: 1.16.0
 
   rit:
