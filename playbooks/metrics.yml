@@ -1,0 +1,7 @@
+---
+- name: synchronize GrimoireLabs host
+  hosts: metrics
+  become: yes
+
+  roles:
+    - { role: base/ubuntu-18.04-lts, tags: ["base", "ubuntu"] }
