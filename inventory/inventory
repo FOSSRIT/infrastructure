@@ -1,3 +1,9 @@
+[metrics]
+foss-dashboard.rit.edu
+
+[metrics:vars]
+ansible_user=jwf9260
+
 [discourse]
 fossrit.community ansible_python_interpreter=/usr/bin/python3
 
@@ -7,3 +13,6 @@ estrella.justinwflory.com
 [centos7]
 estrella.justinwflory.com
 irc-lug.rit.edu
+
+[ubuntu]
+foss-dashboard.rit.edu

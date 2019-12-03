@@ -1,0 +1,12 @@
+---
+- name: install base packages
+  apt:
+    state: present
+    name:
+      - certbot
+      - git
+      - htop
+      - python3
+      - python3-pip
+    autoclean: yes
+    update_cache: yes
