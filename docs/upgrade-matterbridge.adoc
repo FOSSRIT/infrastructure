@@ -1,0 +1,41 @@
+= How to upgrade the FOSSRIT Matterbridge
+
+This document explains how to upgrade the Matterbridge bot to a new upstream release.
+
+
+== Required files
+
+Matterbridge upgrades are managed via variables in the `matterbridge` role:
+
+* `roles/matterbridge/vars/main.yml`
+
+
+== Update version and checksum
+
+The relevant variables are below:
+
+.roles/matterbridge/vars/main.yml
+[source,yaml]
+----
+matterbridge_config:
+  binary_checksum: "f030cae539278c8e3cf6d73d69ed8a11885aec83c73ebf6c2bd7123f14cea974"
+  version: 1.16.2
+----
+
+* `binary_checksum`: Checksum value https://github.com/42wim/matterbridge/releases[provided in upstream releases]
+* `version`: String of version number; should NOT include a `v` character
+
+Update the version and checksum to the values for the new release.
+
+
+== Run playbook
+
+Re-run any playbook using the Matterbridge role.
+Matterbridge will be upgraded in the next playbook run.
+
+Example command:
+
+[source,sh]
+----
+ansible-playbook -K -t matterbridge playbooks/irc-lug.yml
+----
