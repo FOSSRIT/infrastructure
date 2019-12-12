@@ -40,6 +40,13 @@ matterbridge_config:
     slack:
       channel: sysadmin
 
+  rit_python:
+    irc:
+      bot_name: mb-ritpy
+      channel: "#rit-python"
+    slack:
+      channel: python
+
   rit_tigeros:
     irc:
       bot_name: mb-tigeros

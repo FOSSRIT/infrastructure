@@ -194,6 +194,18 @@ enable=true
     channel="{{ matterbridge_config.rit_lug_sysadmin.slack.channel }}"
 
 [[gateway]]
+name="gateway_rit_python"
+enable=true
+
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="{{ matterbridge_config.rit_python.irc.channel }}"
+
+    [[gateway.inout]]
+    account="slack.{{ default_slack_team_name }}"
+    channel="{{ matterbridge_config.rit_python.slack.channel }}"
+
+[[gateway]]
 name="gateway_rit_tigeros"
 enable=true
 
