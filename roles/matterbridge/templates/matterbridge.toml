@@ -229,6 +229,10 @@ enable=true
     account="slack.{{ default_slack_team_name }}"
     channel="{{ matterbridge_config.ritlug.slack.channel }}"
 
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="#ritlug"
+
 [[gateway]]
 name="gateway_ritlug_teleirc"
 enable=true
@@ -240,3 +244,7 @@ enable=true
     [[gateway.inout]]
     account="slack.{{ default_slack_team_name }}"
     channel="{{ matterbridge_config.ritlug_teleirc.slack.channel }}"
+
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="#ritlug-teleirc"

@@ -57,13 +57,13 @@ matterbridge_config:
   ritlug:
     irc:
       bot_name: mb-ritlug
-      channel: "#ritlug"
+      channel: "#rit-lug"
     slack:
       channel: general
 
   ritlug_teleirc:
     irc:
       bot_name: mb-teleirc
-      channel: "#ritlug-teleirc"
+      channel: "#rit-lug-teleirc"
     slack:
       channel: teleirc
