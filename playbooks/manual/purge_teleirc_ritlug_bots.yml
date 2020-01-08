@@ -1,0 +1,30 @@
+---
+- name: purge old TeleIRC bots from Freenode IRC channel changes
+  hosts: irc-lug.rit.edu
+  become: yes
+
+  tasks:
+    - name: stop systemd services for old bots
+      service:
+        name: "{{ item }}"
+        state: stopped
+        enabled: no
+      loop:
+        - teleirc-ritlug.service
+        - teleirc-ritlug-teleirc.service
+
+    - name: purge old bot directories
+      file:
+        path: "/usr/lib64/teleirc/{{ item }}"
+        state: absent
+      loop:
+        - ritlug
+        - ritlug-teleirc
+
+    - name: delete systemd service files
+      file:
+        path: "/usr/lib/systemd/system/{{ item }}"
+        state: absent
+      loop:
+        - teleirc-ritlug.service
+        - teleirc-ritlug-teleirc.service
