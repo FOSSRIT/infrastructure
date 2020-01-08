@@ -100,29 +100,29 @@ bots:
     imgur_client_id: "{{ default_imgur_client_id }}"
     version: "{{ default_version }}"
 
-  ritlug:
-    cn: "ritlug"
+  rit_lug:
+    cn: "rit-lug"
     irc_blacklist: "CowSayBot"
     irc_bot_name: tg-ritlug
-    irc_channel: "#ritlug"
+    irc_channel: "#rit-lug"
     irc_server: "{{ default_irc_server }}"
     irc_nickserv_service: "{{ default_irc_nickserv_service }}"
-    irc_nickserv_password: "{{ vault_bots.ritlug.vault_irc_nickserv_password }}"
-    teleirc_token: "{{ vault_bots.ritlug.vault_teleirc_token }}"
-    teleirc_chat_id: "{{ vault_bots.ritlug.vault_teleirc_chat_id }}"
+    irc_nickserv_password: "{{ vault_bots.rit_lug.vault_irc_nickserv_password }}"
+    teleirc_token: "{{ vault_bots.rit_lug.vault_teleirc_token }}"
+    teleirc_chat_id: "{{ vault_bots.rit_lug.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
     version: "{{ default_version }}"
 
-  ritlug_teleirc:
-    cn: "ritlug-teleirc"
+  rit_lug_teleirc:
+    cn: "rit-lug-teleirc"
     irc_blacklist: ""
     irc_bot_name: tg-teleirc
-    irc_channel: "#ritlug-teleirc"
+    irc_channel: "#rit-lug-teleirc"
     irc_server: "{{ default_irc_server }}"
     irc_nickserv_service: "{{ default_irc_nickserv_service }}"
-    irc_nickserv_password: "{{ vault_bots.ritlug_teleirc.vault_irc_nickserv_password }}"
-    teleirc_token: "{{ vault_bots.ritlug_teleirc.vault_teleirc_token }}"
-    teleirc_chat_id: "{{ vault_bots.ritlug_teleirc.vault_teleirc_chat_id }}"
+    irc_nickserv_password: "{{ vault_bots.rit_lug_teleirc.vault_irc_nickserv_password }}"
+    teleirc_token: "{{ vault_bots.rit_lug_teleirc.vault_teleirc_token }}"
+    teleirc_chat_id: "{{ vault_bots.rit_lug_teleirc.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
     version: HEAD
 
