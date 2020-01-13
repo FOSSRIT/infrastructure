@@ -26,6 +26,13 @@ matterbridge_config:
     slack:
       channel: foss
 
+  rit_lug:
+    irc:
+      bot_name: mb-ritlug
+      channel: "#rit-lug"
+    slack:
+      channel: general
+
   rit_lug_projects:
     irc:
       bot-name: mb-ritlug-proj
@@ -40,6 +47,13 @@ matterbridge_config:
     slack:
       channel: sysadmin
 
+  rit_lug_teleirc:
+    irc:
+      bot_name: mb-teleirc
+      channel: "#rit-lug-teleirc"
+    slack:
+      channel: teleirc
+
   rit_python:
     irc:
       bot_name: mb-ritpy
@@ -53,17 +67,3 @@ matterbridge_config:
       channel: "#rit-tigeros"
     slack:
       channel: tigeros
-
-  ritlug:
-    irc:
-      bot_name: mb-ritlug
-      channel: "#rit-lug"
-    slack:
-      channel: general
-
-  ritlug_teleirc:
-    irc:
-      bot_name: mb-teleirc
-      channel: "#rit-lug-teleirc"
-    slack:
-      channel: teleirc

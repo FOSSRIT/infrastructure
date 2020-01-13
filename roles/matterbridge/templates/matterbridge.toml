@@ -170,6 +170,18 @@ enable=true
     channel="{{ matterbridge_config.rit_foss.slack.channel }}"
 
 [[gateway]]
+name="gateway_rit_lug"
+enable=true
+
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="{{ matterbridge_config.rit_lug.irc.channel }}"
+
+    [[gateway.inout]]
+    account="slack.{{ default_slack_team_name }}"
+    channel="{{ matterbridge_config.rit_lug.slack.channel }}"
+
+[[gateway]]
 name="gateway_rit_lug_projects"
 enable=true
 
@@ -194,6 +206,18 @@ enable=true
     channel="{{ matterbridge_config.rit_lug_sysadmin.slack.channel }}"
 
 [[gateway]]
+name="gateway_rit_lug_teleirc"
+enable=true
+
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="{{ matterbridge_config.rit_lug_teleirc.irc.channel }}"
+
+    [[gateway.inout]]
+    account="slack.{{ default_slack_team_name }}"
+    channel="{{ matterbridge_config.rit_lug_teleirc.slack.channel }}"
+
+[[gateway]]
 name="gateway_rit_python"
 enable=true
 
@@ -216,35 +240,3 @@ enable=true
     [[gateway.inout]]
     account="slack.{{ default_slack_team_name }}"
     channel="{{ matterbridge_config.rit_tigeros.slack.channel }}"
-
-[[gateway]]
-name="gateway_ritlug"
-enable=true
-
-    [[gateway.inout]]
-    account="irc.{{ default_irc_network_name }}"
-    channel="{{ matterbridge_config.ritlug.irc.channel }}"
-
-    [[gateway.inout]]
-    account="slack.{{ default_slack_team_name }}"
-    channel="{{ matterbridge_config.ritlug.slack.channel }}"
-
-    [[gateway.inout]]
-    account="irc.{{ default_irc_network_name }}"
-    channel="#ritlug"
-
-[[gateway]]
-name="gateway_ritlug_teleirc"
-enable=true
-
-    [[gateway.inout]]
-    account="irc.{{ default_irc_network_name }}"
-    channel="{{ matterbridge_config.ritlug_teleirc.irc.channel }}"
-
-    [[gateway.inout]]
-    account="slack.{{ default_slack_team_name }}"
-    channel="{{ matterbridge_config.ritlug_teleirc.slack.channel }}"
-
-    [[gateway.inout]]
-    account="irc.{{ default_irc_network_name }}"
-    channel="#ritlug-teleirc"
