@@ -35,6 +35,19 @@ bots:
     imgur_client_id: "{{ default_imgur_client_id }}"
     version: "{{ default_version }}"
 
+  open_source_diversity:
+    cn: "opensourcediversity"
+    irc_blacklist: ""
+    irc_bot_name: tg-osdiversity
+    irc_channel: "#opensourcediversity"
+    irc_server: "{{ default_irc_server }}"
+    irc_nickserv_service: "{{ default_irc_nickserv_service }}"
+    irc_nickserv_password: "{{ vault_bots.open_source_diversity.vault_irc_nickserv_password }}"
+    teleirc_token: "{{ vault_bots.open_source_diversity.vault_teleirc_token }}"
+    teleirc_chat_id: "{{ vault_bots.open_source_diversity.vault_teleirc_chat_id }}"
+    imgur_client_id: "{{ default_imgur_client_id }}"
+    version: "{{ default_version }}"
+
   rit_foss:
     cn: "rit-foss"
     irc_blacklist: "CowSayBot"
