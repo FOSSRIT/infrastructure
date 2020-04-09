@@ -48,6 +48,19 @@ bots:
     imgur_client_id: "{{ default_imgur_client_id }}"
     version: "{{ default_version }}"
 
+  rit:
+    cn: "rit"
+    irc_blacklist: "CowSayBot"
+    irc_bot_name: tg-rit
+    irc_channel: "#rit"
+    irc_server: "{{ default_irc_server }}"
+    irc_nickserv_service: "{{ default_irc_nickserv_service }}"
+    irc_nickserv_password: "{{ vault_bots.rit.vault_irc_nickserv_password }}"
+    teleirc_token: "{{ vault_bots.rit.vault_teleirc_token }}"
+    teleirc_chat_id: "{{ vault_bots.rit.vault_teleirc_chat_id }}"
+    imgur_client_id: "{{ default_imgur_client_id }}"
+    version: "{{ default_version }}"
+
   rit_foss:
     cn: "rit-foss"
     irc_blacklist: "CowSayBot"
