@@ -1,8 +1,8 @@
 ---
 default_irc_bot_nick: slack-ritlug
 default_irc_ignore_nicks: "cowsaybot"
-default_irc_network_name: freenode
-default_irc_network_server: irc.freenode.net:6697
+default_irc_network_name: liberachat
+default_irc_network_server: irc.libera.chat:6697
 
 default_slack_api_token: "{{ vault_slack_api_token }}"
 default_slack_ignore_nicks: ""
