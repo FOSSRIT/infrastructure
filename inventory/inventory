@@ -7,11 +7,7 @@ ansible_user=jwf9260
 [discourse]
 fossrit.community ansible_python_interpreter=/usr/bin/python3
 
-[staging]
-estrella.justinwflory.com
-
 [centos7]
-estrella.justinwflory.com
 irc-lug.rit.edu
 
 [ubuntu]
