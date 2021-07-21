@@ -3,19 +3,19 @@ galaxy_info:
   author: Justin W. Flory
   description: Deploy RITlug/teleirc chat bots to bridge IRC channels and Telegram groups
 
-  license: MPLv2
+  license: BSD-3-Clause
 
-  min_ansible_version: 2.7
+  min_ansible_version: 2.9
 
   platforms:
   - name: EL
     versions:
     - 7
+    - 8
 
   galaxy_tags:
   - irc
-  - javascript
-  - nodejs
+  - go
   - rit
   - ritlug
   - rochester

@@ -7,11 +7,10 @@ bots:
     cn: "my-example-bot"
     irc_blacklist: "noisy-irc-bot,ci-build-alerts"
     irc_bot_name: tg-my-example-bot
-    irc_channel: "#ritlug-teleirc-sandbox"
+    irc_channel: "#rit-lug-teleirc-sandbox"
     irc_server: "{{ default_irc_server }}"
     irc_nickserv_service: "{{ default_irc_nickserv_service }}"
     irc_nickserv_password: "{{ vault_bots.my_example_bot.vault_irc_nickserv_password }}"
     teleirc_token: "{{ vault_bots.my_example_bot.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.my_example_bot.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ vault_default_imgur_client_id }}"
-    version: "{{ default_version }}"

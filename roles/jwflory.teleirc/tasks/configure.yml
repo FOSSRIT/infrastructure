@@ -1,0 +1,28 @@
+---
+- name: push templated configuration
+  template:
+    src: env
+    dest: "/etc/teleirc/env-{{ item.value.cn }}"
+    mode: 0640
+    owner: teleirc
+    group: teleirc
+    setype: etc_t
+    seuser: system_u
+  loop: "{{ bots|dict2items }}"
+  notify: restart teleirc
+
+- name: push templated systemd unit file
+  template:
+    src: teleirc.service
+    dest: "/usr/lib/systemd/system/teleirc-{{ item.value.cn }}.service"
+    mode: 0644
+    seuser: system_u
+    setype: systemd_unit_file_t
+  loop: "{{ bots|dict2items }}"
+
+- name: start/enable each TeleIRC systemd unit file
+  service:
+    name: "teleirc-{{ item.value.cn }}.service"
+    state: started
+    enabled: yes
+  loop: "{{ bots|dict2items }}"

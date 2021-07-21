@@ -1,9 +1,6 @@
-###############################################################################
-#                                                                             #
-#           THIS FILE IS MANAGED BY ANSIBLE! CHANGES ARE OVERWRITTEN.         #
-#                   https://github.com/jwflory/infrastructure                 #
-#                                                                             #
-###############################################################################
+# vim:set filetype=sh:
+# See the Config File Glossary for instructions.
+# https://docs.teleirc.com/en/latest/user/config-file-glossary/
 
 ###############################################################################
 #                                                                             #
@@ -11,16 +8,49 @@
 #                                                                             #
 ###############################################################################
 
+#####----- Host connection settings -----#####
+IRC_HOST_IP=""
+
+
+#####----- IRC server connection settings -----#####
+IRC_SERVER={{ item.value.irc_server }}
+IRC_SERVER_PASSWORD=""
+IRC_PORT=6697
+
+## Encryption (SSL/TLS) options
+IRC_USE_SSL=true
+IRC_CERT_ALLOW_EXPIRED=false
+IRC_CERT_ALLOW_SELFSIGNED=false
+
+
+#####----- IRC channel settings -----#####
+IRC_CHANNEL="{{ item.value.irc_channel }}"
+IRC_CHANNEL_KEY=""
 IRC_BLACKLIST="{{ item.value.irc_blacklist }}"
-IRC_BOT_NAME={{ item.value.irc_bot_name }}
-IRC_CHANNEL={{ item.value.irc_channel }}
-IRC_SEND_STICKER_EMOJI=true
+
+
+#####----- IRC bot settings -----#####
+IRC_BOT_NAME="{{ item.value.irc_bot_name }}"
+IRC_BOT_REALNAME="Powered by TeleIRC <github.com/RITlug/teleirc>"
+IRC_BOT_IDENT="{{ item.value.irc_bot_name }}"
+
+# NickServ options
+IRC_NICKSERV_SERVICE={{ item.value.irc_nickserv_service }}
+IRC_NICKSERV_USER="{{ item.value.irc_bot_name }}"
+IRC_NICKSERV_PASS="{{ item.value.irc_nickserv_password }}"
+
+
+#####----- IRC message settings -----#####
 IRC_PREFIX="<"
 IRC_SUFFIX=">"
-IRC_SERVER={{ item.value.irc_server }}
-IRC_NICKSERV_SERVICE={{ item.value.irc_nickserv_service }}
-IRC_NICKSERV_PASS="{{ item.value.irc_nickserv_password }}"
+IRC_SEND_STICKER_EMOJI=true
+IRC_SEND_DOCUMENT=false
 IRC_EDITED_PREFIX="(edited) "
+IRC_MAX_MESSAGE_LENGTH=400
+IRC_SHOW_ZWSP=true
+IRC_NO_FORWARD_PREFIX=""
+IRC_QUIT_MESSAGE="TeleIRC bridge stopped."
+
 
 
 ###############################################################################
@@ -29,32 +59,20 @@ IRC_EDITED_PREFIX="(edited) "
 #                                                                             #
 ###############################################################################
 
+TELEGRAM_CHAT_ID={{ item.value.teleirc_chat_id }}
 TELEIRC_TOKEN={{ item.value.teleirc_token }}
+
 MAX_MESSAGES_PER_MINUTE=20
 SHOW_ACTION_MESSAGE=true
 SHOW_JOIN_MESSAGE=false
 SHOW_KICK_MESSAGE=true
 SHOW_LEAVE_MESSAGE=false
-TELEGRAM_CHAT_ID={{ item.value.teleirc_chat_id }}
+SHOW_DISCONNECT_MESSAGE=false
 
-
-###############################################################################
+################################################################################
 #                                                                             #
 #                      Imgur configuration settings                           #
 #                                                                             #
 ###############################################################################
 
-USE_IMGUR_FOR_IMAGES=true
 IMGUR_CLIENT_ID={{ item.value.imgur_client_id }}
-
-
-###############################################################################
-#                                                                             #
-#                      Misc. required env variables                           #
-#                -- not meant for user config, don't touch --                 #
-#                                                                             #
-###############################################################################
-
-# https://github.com/yagop/node-telegram-bot-api/issues/319#issuecomment-324963294
-NTBA_FIX_319=1
-

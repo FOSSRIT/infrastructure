@@ -6,8 +6,7 @@ After=multi-user.target
 [Service]
 Type=simple
 User=teleirc
-WorkingDirectory=/usr/lib64/teleirc/{{ item.value.cn }}
-ExecStart=/usr/bin/node teleirc.js
+ExecStart=/usr/local/bin/teleirc -conf /etc/teleirc/env-{{ item.value.cn }}
 Restart=always
 RestartSec=60
 
