@@ -2,4 +2,4 @@
 # defaults file for teleirc
 default_irc_server: irc.libera.chat
 default_irc_nickserv_service: NickServ
-default_version: v2.1.0
+default_version: v2.2.0

@@ -19,6 +19,7 @@
     seuser: system_u
     setype: systemd_unit_file_t
   loop: "{{ bots|dict2items }}"
+  notify: systemd daemon reload
 
 - name: start/enable each TeleIRC systemd unit file
   service:

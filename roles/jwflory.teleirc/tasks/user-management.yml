@@ -4,7 +4,7 @@
     name: teleirc
     comment: "system user for RITlug/teleirc bots - do not use interactively"
     system: yes
-    home: "/etc/teleirc"
+    home: /etc/teleirc
     create_home: no
 
 - name: add target user to TeleIRC admin group

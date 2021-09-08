@@ -4,3 +4,7 @@
     name: "teleirc-{{ item.value.cn }}.service"
     state: restarted
   loop: "{{ bots|dict2items }}"
+
+- name: systemd daemon reload
+  ansible.builtin.systemd:
+    daemon_reload: yes
