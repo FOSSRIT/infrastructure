@@ -21,6 +21,7 @@
 
 - name: push teleirc binary to /usr/local/bin
   copy:
+    remote_src: true
     src: "/tmp/teleirc/teleirc"
     dest: "/usr/local/bin/teleirc"
     mode: 0755
