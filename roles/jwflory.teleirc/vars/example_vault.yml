@@ -1,7 +1,8 @@
 ---
 # encrypt this with Ansible Vault before committing!
 
-vault_default_imgur_client_id: "000000000000000"
+# Default TeleIRC imgur API token. It is heavily recommended to create your own.
+vault_default_imgur_client_id: "7d6b00b87043f58"
 
 vault_bots:
   my_example_bot:

@@ -2,9 +2,9 @@
 - name: create system user for TeleIRC bots
   user:
     name: teleirc
-    comment: "system user to run RITlug/teleirc bots - do not use"
+    comment: "system user for RITlug/teleirc bots - do not use interactively"
     system: yes
-    home: "/usr/lib64/teleirc"
+    home: /etc/teleirc
     create_home: no
 
 - name: add target user to TeleIRC admin group
@@ -17,8 +17,7 @@
 - name: create root directory for TeleIRC bots
   file:
     state: directory
-    path: "/usr/lib64/teleirc"
+    path: "/etc/teleirc"
     mode: 0755
-    owner: teleirc
-    group: teleirc
+    setype: etc_t
     seuser: system_u

@@ -1,6 +1,8 @@
 Ansible Role: teleirc
 =====================
 
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
 Deploy RITlug/teleirc chat bots to bridge IRC channels and Telegram groups
 
 
@@ -26,7 +28,7 @@ Available variables are listed below, along with default values (see `defaults/m
 ```yaml
 default_irc_server: chat.freenode.net
 default_irc_nickserv_service: NickServ
-default_version: v1.2.2
+default_version: v2.0.0
 ```
 
 * **`default_irc_server`**: Default IRC server to connect to (defaults to Freenode)
@@ -48,7 +50,6 @@ bots:
     teleirc_token: "{{ vault_bots.my_example_bot.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.my_example_bot.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ vault_default_imgur_client_id }}"
-    version: "{{ default_version }}"
 ```
 
 * **`bots`**: List of all bots
@@ -63,7 +64,6 @@ bots:
 * **`bots.my_example_bot.teleirc_token`**: _See below_
 * **`bots.my_example_bot.teleirc_chat_id`**: _See below_
 * **`bots.my_example_bot.imgur_client_id`**: _See below_
-* **`bots.my_example_bot.version`**: What version of TeleIRC to deploy (uses `defaults/main.yml`)
 
 ### `vars/vault.yml`
 
@@ -102,13 +102,9 @@ None.
 
 ## License
 
-[Mozilla Public License 2.0](https://www.mozilla.org/en-US/MPL/ "Mozilla Public License – Mozilla")
-
-Author(s) accept changes made to `vars/` to be omitted in published derivative work, as these are understood to be deployment-specific.
-Modifications to other aspects of the Ansible Role that others could benefit from are expected to be open.
+[BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause).
 
 
 ## Author Information
 
-This role was created in 2018 by [Justin W. Flory](https://justinwflory.com/).
-Find him on [GitHub](https://github.com/jwflory "Check out other things I'm working on!") and [LinkedIn](https://www.linkedin.com/in/justinwflory/ "See what I'm doing out in the world…").
+This role was first created in 2018 by [Justin W. Flory](https://jwf.io).

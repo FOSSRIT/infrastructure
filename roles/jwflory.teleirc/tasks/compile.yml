@@ -1,0 +1,30 @@
+---
+- name: install go and build dependencies
+  package:
+    state: present
+    name:
+      - git
+      - golang
+
+- name: git clone/pull RITlug/teleirc
+  git:
+    repo: "https://github.com/RITlug/teleirc.git"
+    dest: "/tmp/teleirc"
+    version: "{{ default_version }}"
+    accept_hostkey: yes
+    force: yes
+
+- name: build teleirc binary
+  command:
+    cmd: bash build_binary.sh
+    chdir: "/tmp/teleirc/"
+
+- name: push teleirc binary to /usr/local/bin
+  copy:
+    remote_src: true
+    src: "/tmp/teleirc/teleirc"
+    dest: "/usr/local/bin/teleirc"
+    mode: 0755
+    setype: bin_t
+    seuser: system_u
+  notify: restart teleirc
