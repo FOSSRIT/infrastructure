@@ -59,7 +59,7 @@ bots:
     teleirc_token: "{{ vault_bots.rit.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
   rit_foss:
     cn: "rit-foss"
@@ -72,7 +72,7 @@ bots:
     teleirc_token: "{{ vault_bots.rit_foss.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_foss.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
   rit_foss_admin:
     cn: "rit-foss-admin"
@@ -85,7 +85,7 @@ bots:
     teleirc_token: "{{ vault_bots.rit_foss_admin.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_foss_admin.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
   rit_librecorps:
     cn: "rit-librecorps"
@@ -98,7 +98,7 @@ bots:
     teleirc_token: "{{ vault_bots.rit_librecorps.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_librecorps.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
   rit_python:
     cn: "rit-python"
@@ -111,7 +111,7 @@ bots:
     teleirc_token: "{{ vault_bots.rit_python.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_python.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
   rit_tigeros:
     cn: "rit-tigeros"
@@ -124,7 +124,7 @@ bots:
     teleirc_token: "{{ vault_bots.rit_tigeros.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_tigeros.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
   rit_lug:
     cn: "rit-lug"
@@ -137,7 +137,7 @@ bots:
     teleirc_token: "{{ vault_bots.rit_lug.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_lug.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
   rit_lug_teleirc:
     cn: "rit-lug-teleirc"
@@ -150,5 +150,5 @@ bots:
     teleirc_token: "{{ vault_bots.rit_lug_teleirc.vault_teleirc_token }}"
     teleirc_chat_id: "{{ vault_bots.rit_lug_teleirc.vault_teleirc_chat_id }}"
     imgur_client_id: "{{ default_imgur_client_id }}"
-    version: HEAD
+    version: "feature/reply"
 
