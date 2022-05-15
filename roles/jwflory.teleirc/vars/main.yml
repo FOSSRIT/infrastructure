@@ -61,7 +61,6 @@ bots:
     imgur_client_id: "{{ default_imgur_client_id }}"
     version: HEAD
 
-
   rit_foss:
     cn: "rit-foss"
     irc_blacklist: "CowSayBot"
