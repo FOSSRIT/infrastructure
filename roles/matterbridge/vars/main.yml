@@ -82,6 +82,17 @@ matterbridge_config:
     matrix:
       channel: "#rit-foss:fedora.im"
 
+  rit_foss_discord_bridge:
+    enabled: true
+    nexthop:
+      channel: "{{ vault_nexthop_discord_channelid }}"
+    ritsec:
+      channel: "{{ vault_ritsec_discord_channelid }}"
+    ritframework:
+      channel: "{{ vault_rit_framework_discord_channelid }}"
+    fossrit:
+      channel: "{{ vault_fossrit_discord_channelid }}"
+
   rit_lug:
     enabled: true
     irc:
