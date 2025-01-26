@@ -11,8 +11,8 @@ UseSASL=false
 
 Nick="{{ default_irc_bot_nick }}"
 #UseSASL=true
-#NickServNick=""
-#NickServPassword=""
+NickServNick="NickServ"
+NickServPassword="{{ default_irc_bot_nickserv_pass }}"
 
 ## RELOADABLE SETTINGS
 ## Settings below can be reloaded by editing the file
