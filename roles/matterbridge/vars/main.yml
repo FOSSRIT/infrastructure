@@ -51,6 +51,7 @@ matterbridge_config:
   version: 1.22.2
 
   rit:
+    enabled: true
     irc:
       bot_name: mb-rit
       channel: "#rit"
@@ -58,6 +59,7 @@ matterbridge_config:
       channel: random
 
   rit_foss:
+    enabled: true
     irc:
       bot_name: mb-ritfoss
       channel: "#rit-foss"
@@ -65,6 +67,7 @@ matterbridge_config:
       channel: foss
 
   rit_lug:
+    enabled: true
     irc:
       bot_name: mb-ritlug
       channel: "#rit-lug"
@@ -72,6 +75,7 @@ matterbridge_config:
       channel: general
 
   rit_lug_projects:
+    enabled: true
     irc:
       bot-name: mb-ritlug-proj
       channel: "#rit-lug-projects"
@@ -79,6 +83,7 @@ matterbridge_config:
       channel: projects
 
   rit_lug_sysadmin:
+    enabled: true
     irc:
       bot_name: mb-ritlug-sysadm
       channel: "#rit-lug-sysadmin"
@@ -86,6 +91,7 @@ matterbridge_config:
       channel: sysadmin
 
   rit_lug_teleirc:
+    enabled: true
     irc:
       bot_name: mb-teleirc
       channel: "#rit-lug-teleirc"
@@ -93,6 +99,7 @@ matterbridge_config:
       channel: teleirc
 
   rit_python:
+    enabled: true
     irc:
       bot_name: mb-ritpy
       channel: "#rit-python"
@@ -100,6 +107,7 @@ matterbridge_config:
       channel: python
 
   rit_tigeros:
+    enabled: true
     irc:
       bot_name: mb-tigeros
       channel: "#rit-tigeros"
