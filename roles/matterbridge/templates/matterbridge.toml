@@ -32,7 +32,7 @@ ColorNicks=true
 IgnoreNicks="{{ default_irc_ignore_nicks }}"
 
 #RemoteNickFormat defines how remote users appear on this bridge
-RemoteNickFormat="<{NOPINGNICK}> "
+RemoteNickFormat="[{PROTOCOL}] <{NOPINGNICK}> "
 
 #Enable to show users joins/parts from other bridges
 #Currently works for messages from the following bridges: irc, mattermost, slack
