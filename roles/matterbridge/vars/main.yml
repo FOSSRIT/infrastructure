@@ -58,6 +58,17 @@ matterbridge_config:
     slack:
       channel: random
 
+  rit_foss_infra:
+    enabled: true
+    irc:
+      channel: "{{ vault_fossritinfra_irc_channelid }}"
+    discord:
+      channel: "{{ vault_fossritinfra_discord_channelid }}"
+    telegram:
+      channel: "{{ vault_fossritinfra_telegram_channelid }}"
+    matrix:
+      channel: "{{ vault_fossritinfra_matrix_channelid }}"
+
   rit_foss:
     enabled: true
     irc:

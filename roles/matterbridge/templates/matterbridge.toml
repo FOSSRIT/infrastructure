@@ -263,6 +263,26 @@ enable={{ matterbridge_config.rit.enabled }}
     channel="{{ matterbridge_config.rit.slack.channel }}"
 
 [[gateway]]
+name="gateway_rit_foss_infra"
+enable={{ matterbridge_config.rit_foss_infra.enabled }}
+
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.irc.channel }}"
+
+    [[gateway.inout]]
+    account="discord.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.discord.channel }}"
+
+    [[gateway.inout]]
+    account="telegram.{{ matterbridge_networks.fossrit_telegram.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.telegram.channel }}"
+
+    [[gateway.inout]]
+    account="matrix.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.matrix.channel }}"
+
+[[gateway]]
 name="gateway_rit_foss"
 enable={{ matterbridge_config.rit_foss.enabled }}
 
