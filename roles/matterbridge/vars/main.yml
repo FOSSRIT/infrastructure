@@ -61,7 +61,6 @@ matterbridge_config:
   rit_foss:
     enabled: true
     irc:
-      bot_name: mb-ritfoss
       channel: "#rit-foss"
     slack:
       channel: foss
@@ -69,8 +68,6 @@ matterbridge_config:
       channel: "general"
     telegram:
       channel: "-1001091972452"
-    irc:
-      channel: "#rit-foss"
     matrix:
       channel: "#rit-foss:fedora.im"
 
