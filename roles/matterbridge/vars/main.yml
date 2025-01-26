@@ -1,4 +1,7 @@
 ---
+
+# these values are used mainly in defining the networks in the config (i.e. what sources of channels exist)
+
 default_irc_bot_nick: foss-rit-bridge
 default_irc_ignore_nicks: "cowsaybot"
 default_irc_network_name: liberachat
@@ -31,6 +34,9 @@ matterbridge_networks:
     label: NextHOP
     bot_token: "{{ vault_discord_fossrit_bot_token }}"
     server_id: "{{ vault_nexthop_discord_serverid }}"
+
+
+# this is used mainly in the bridges/gateways section of the config (i.e. what channels are in what groups)
 matterbridge_config:
   binary_checksum: "00e243ffaa5560645dbedf49b0945d77c0ecb154813d745cd8ab32cd86b9f753"
   version: 1.22.2
