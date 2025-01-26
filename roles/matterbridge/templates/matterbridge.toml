@@ -88,6 +88,63 @@ PreserveThreading=true
 
 
 ###################################################################
+#discord section
+###################################################################
+[discord]
+[discord.{{matterbridge_networks.fossrit_discord.network_name}}]
+Label="{{matterbridge_networks.fossrit_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.fossrit_discord.bot_token}}"
+Server="{{matterbridge_networks.fossrit_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+
+[discord.{{matterbridge_networks.rit_framework_discord.network_name}}]
+Label="{{matterbridge_networks.rit_framework_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.rit_framework_discord.bot_token}}"
+Server="{{matterbridge_networks.rit_framework_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+[discord.{{matterbridge_networks.ritsec_discord.network_name}}]
+Label="{{matterbridge_networks.ritsec_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.ritsec_discord.bot_token}}"
+Server="{{matterbridge_networks.ritsec_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+[discord.{{matterbridge_networks.nexthop_discord.network_name}}]
+Label="{{matterbridge_networks.nexthop_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.nexthop_discord.bot_token}}"
+Server="{{matterbridge_networks.nexthop_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+###################################################################
 #General configuration
 ###################################################################
 # Settings here are defaults that each protocol can override

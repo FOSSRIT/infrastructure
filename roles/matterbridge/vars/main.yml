@@ -10,6 +10,27 @@ default_slack_api_token: "{{ vault_slack_api_token }}"
 default_slack_ignore_nicks: ""
 default_slack_team_name: rit-lug
 
+matterbridge_networks:
+  fossrit_discord:
+    network_name: fossrit
+    label: FOSSCord
+    bot_token: "{{ vault_discord_fossrit_bot_token }}"
+    server_id: "{{ vault_fossrit_discord_serverid }}"
+  rit_framework_discord:
+    network_name: ritframework
+    label: RITFramework
+    bot_token: "{{ vault_discord_fossrit_bot_token }}"
+    server_id: "{{ vault_rit_framework_discord_serverid }}"
+  ritsec_discord:
+    network_name: ritsec
+    label: RITSEC
+    bot_token: "{{ vault_discord_fossrit_bot_token }}"
+    server_id: "{{ vault_ritsec_discord_serverid }}"
+  nexthop_discord:
+    network_name: nexthop
+    label: NextHOP
+    bot_token: "{{ vault_discord_fossrit_bot_token }}"
+    server_id: "{{ vault_nexthop_discord_serverid }}"
 matterbridge_config:
   binary_checksum: "00e243ffaa5560645dbedf49b0945d77c0ecb154813d745cd8ab32cd86b9f753"
   version: 1.22.2
