@@ -274,6 +274,19 @@ enable={{ matterbridge_config.rit_foss.enabled }}
     account="slack.{{ default_slack_team_name }}"
     channel="{{ matterbridge_config.rit_foss.slack.channel }}"
 
+    [[gateway.inout]]
+    account="discord.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss.discord.channel }}"
+
+    [[gateway.inout]]
+    account="telegram.{{ matterbridge_networks.fossrit_telegram.network_name }}"
+    channel="{{ matterbridge_config.rit_foss.telegram.channel }}"
+
+    [[gateway.inout]]
+    account="matrix.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss.matrix.channel }}"
+
+
 [[gateway]]
 name="gateway_rit_lug"
 enable={{ matterbridge_config.rit_lug.enabled }}

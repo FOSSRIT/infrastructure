@@ -65,6 +65,14 @@ matterbridge_config:
       channel: "#rit-foss"
     slack:
       channel: foss
+    discord:
+      channel: "general"
+    telegram:
+      channel: "-1001091972452"
+    irc:
+      channel: "#rit-foss"
+    matrix:
+      channel: "#rit-foss:fedora.im"
 
   rit_lug:
     enabled: true
