@@ -23,6 +23,11 @@ matterbridge_networks:
     network_name: fossrit
     label: FOSS-TG
     bot_token: "{{ vault_fossrit_telegram_bottoken }}"
+  fossrit_matrix:
+    network_name: fossrit
+    label: FOSS-M
+    homeserver: "https://matrix.org"
+    matrix_password: "{{ vault_fossrit_matrix_password }}"
   rit_framework_discord:
     network_name: ritframework
     label: RITFramework

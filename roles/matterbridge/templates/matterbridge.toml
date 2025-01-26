@@ -167,6 +167,32 @@ QuoteLengthLimit=46
 UseFirstName=true
 
 ###################################################################
+#matrix section
+###################################################################
+[matrix]
+[matrix.{{matterbridge_networks.fossrit_matrix.network_name}}]
+Label="{{matterbridge_networks.fossrit_matrix.label}}"
+Server="{{matterbridge_networks.fossrit_matrix.homeserver}}"
+
+#login/pass of your bot.
+#Use a dedicated user for this and not your own!
+#Messages sent from this user will not be relayed to avoid loops.
+Login="fossrit_bridge"
+Password="{{matterbridge_networks.fossrit_matrix.matrix_password}}"
+
+#Alternatively you can use MXID and access token (open https://app.element.io/
+#in INCOGNITO mode, open Settings -> lowest tab and above "clear cache and reload"
+#you can find the access token. Close the window without logging out
+#(or the token gets invalid (if it leaks, it can be removed by logging in and using the sessions menu))
+#MxID="@yourbot:example.net"
+#Token="tokenforthebotuser"
+
+#Whether to send the homeserver suffix. eg ":matrix.org" in @username:matrix.org
+#to other bridges, or only send "username".(true only sends username)
+#OPTIONAL (default false)
+NoHomeServerSuffix=false
+
+###################################################################
 #General configuration
 ###################################################################
 # Settings here are defaults that each protocol can override
