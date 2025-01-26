@@ -153,6 +153,20 @@ UseLocalAvatar=["discord"]
 RemoteNickFormat="[{LABEL}] <{NICK}> "
 
 ###################################################################
+#telegram section
+###################################################################
+#See https://core.telegram.org/bots#6-botfather 
+#and https://www.linkedin.com/pulse/telegram-bots-beginners-marco-frau for more information on how to create a telegram bot
+[telegram]
+[telegram.{{matterbridge_networks.fossrit_telegram.network_name}}]
+Label="{{matterbridge_networks.fossrit_telegram.label}}"
+Token="{{matterbridge_networks.fossrit_telegram.bot_token}}"
+
+#QuoteFormat="{MESSAGE} (re @{QUOTENICK}: {QUOTEMESSAGE})"
+QuoteLengthLimit=46
+UseFirstName=true
+
+###################################################################
 #General configuration
 ###################################################################
 # Settings here are defaults that each protocol can override

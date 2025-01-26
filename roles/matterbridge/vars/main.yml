@@ -19,6 +19,10 @@ matterbridge_networks:
     label: FOSSCord
     bot_token: "{{ vault_discord_fossrit_bot_token }}"
     server_id: "{{ vault_fossrit_discord_serverid }}"
+  fossrit_telegram:
+    network_name: fossrit
+    label: FOSS-TG
+    bot_token: "{{ vault_fossrit_telegram_bottoken }}"
   rit_framework_discord:
     network_name: ritframework
     label: RITFramework
