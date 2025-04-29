@@ -90,7 +90,7 @@ PreserveThreading=true
 ###################################################################
 #discord section
 ###################################################################
-; Setting up a new discord bot
+# Setting up a new discord bot
 # You can get your token by following the instructions on
 # https://github.com/42wim/matterbridge/wiki/Discord-bot-setup
 # in particular that the "Members Intent" checkbox is important.
@@ -290,9 +290,9 @@ enable={{ matterbridge_config.rit_foss.enabled }}
     account="irc.{{ default_irc_network_name }}"
     channel="{{ matterbridge_config.rit_foss.irc.channel }}"
 
-    ; [[gateway.inout]]
-    ; account="slack.{{ default_slack_team_name }}"
-    ; channel="{{ matterbridge_config.rit_foss.slack.channel }}"
+    # [[gateway.inout]]
+    # account="slack.{{ default_slack_team_name }}"
+    # channel="{{ matterbridge_config.rit_foss.slack.channel }}"
 
     [[gateway.inout]]
     account="discord.{{ matterbridge_networks.fossrit_discord.network_name }}"
