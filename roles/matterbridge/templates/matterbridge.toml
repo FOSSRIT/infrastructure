@@ -11,8 +11,8 @@ UseSASL=false
 
 Nick="{{ default_irc_bot_nick }}"
 #UseSASL=true
-#NickServNick=""
-#NickServPassword=""
+NickServNick="NickServ"
+NickServPassword="{{ default_irc_bot_nickserv_pass }}"
 
 ## RELOADABLE SETTINGS
 ## Settings below can be reloaded by editing the file
@@ -32,7 +32,7 @@ ColorNicks=true
 IgnoreNicks="{{ default_irc_ignore_nicks }}"
 
 #RemoteNickFormat defines how remote users appear on this bridge
-RemoteNickFormat="<{NOPINGNICK}> "
+RemoteNickFormat="[{PROTOCOL}] <{NOPINGNICK}> "
 
 #Enable to show users joins/parts from other bridges
 #Currently works for messages from the following bridges: irc, mattermost, slack
@@ -86,6 +86,111 @@ IgnoreNicks="{{ default_slack_ignore_nicks }}"
 #OPTIONAL (default false)
 PreserveThreading=true
 
+
+###################################################################
+#discord section
+###################################################################
+# Setting up a new discord bot
+# You can get your token by following the instructions on
+# https://github.com/42wim/matterbridge/wiki/Discord-bot-setup
+# in particular that the "Members Intent" checkbox is important.
+# If you want roles/groups mentions to be shown with names instead of ID, 
+# you'll need to give your bot the "Manage Roles" permission.
+# the oauth url to invite the bot to your server is also availble in this discord developer page
+
+[discord]
+[discord.{{matterbridge_networks.fossrit_discord.network_name}}]
+Label="{{matterbridge_networks.fossrit_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.fossrit_discord.bot_token}}"
+Server="{{matterbridge_networks.fossrit_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+
+[discord.{{matterbridge_networks.rit_framework_discord.network_name}}]
+Label="{{matterbridge_networks.rit_framework_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.rit_framework_discord.bot_token}}"
+Server="{{matterbridge_networks.rit_framework_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+[discord.{{matterbridge_networks.ritsec_discord.network_name}}]
+Label="{{matterbridge_networks.ritsec_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.ritsec_discord.bot_token}}"
+Server="{{matterbridge_networks.ritsec_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+[discord.{{matterbridge_networks.nexthop_discord.network_name}}]
+Label="{{matterbridge_networks.nexthop_discord.label}}" # discord doesnt like having the word "discord" in the usernames when the bot proxies them.
+Token="{{matterbridge_networks.nexthop_discord.bot_token}}"
+Server="{{matterbridge_networks.nexthop_discord.server_id}}"
+AutoWebhooks=true
+# Map threads from other bridges on discord replies
+PreserveThreading=true
+# UseLocalAvatar specifies source bridges for which an avatar should be 'guessed' when an incoming message has no avatar. This works by comparing the username of the message to an existing Discord user, and using the avatar of the Discord user.
+# At the moment, this setting is only available for Discord.
+UseLocalAvatar=["discord"]
+# here we override the default RemoteNickFormat so we can use labels to differentiate the different discord servers
+RemoteNickFormat="[{LABEL}] <{NICK}> "
+
+###################################################################
+#telegram section
+###################################################################
+#See https://core.telegram.org/bots#6-botfather 
+#and https://www.linkedin.com/pulse/telegram-bots-beginners-marco-frau for more information on how to create a telegram bot
+[telegram]
+[telegram.{{matterbridge_networks.fossrit_telegram.network_name}}]
+Label="{{matterbridge_networks.fossrit_telegram.label}}"
+Token="{{matterbridge_networks.fossrit_telegram.bot_token}}"
+
+#QuoteFormat="{MESSAGE} (re @{QUOTENICK}: {QUOTEMESSAGE})"
+QuoteLengthLimit=46
+UseFirstName=true
+
+###################################################################
+#matrix section
+###################################################################
+[matrix]
+[matrix.{{matterbridge_networks.fossrit_matrix.network_name}}]
+Label="{{matterbridge_networks.fossrit_matrix.label}}"
+Server="{{matterbridge_networks.fossrit_matrix.homeserver}}"
+
+#login/pass of your bot.
+#Use a dedicated user for this and not your own!
+#Messages sent from this user will not be relayed to avoid loops.
+Login="fossrit_bridge"
+Password="{{matterbridge_networks.fossrit_matrix.matrix_password}}"
+
+#Alternatively you can use MXID and access token (open https://app.element.io/
+#in INCOGNITO mode, open Settings -> lowest tab and above "clear cache and reload"
+#you can find the access token. Close the window without logging out
+#(or the token gets invalid (if it leaks, it can be removed by logging in and using the sessions menu))
+#MxID="@yourbot:example.net"
+#Token="tokenforthebotuser"
+
+#Whether to send the homeserver suffix. eg ":matrix.org" in @username:matrix.org
+#to other bridges, or only send "username".(true only sends username)
+#OPTIONAL (default false)
+NoHomeServerSuffix=false
 
 ###################################################################
 #General configuration
@@ -147,7 +252,7 @@ RemoteNickFormat="[{PROTOCOL}] <{NICK}> "
 
 [[gateway]]
 name="gateway_rit"
-enable=true
+enable={{ matterbridge_config.rit.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
@@ -158,20 +263,74 @@ enable=true
     channel="{{ matterbridge_config.rit.slack.channel }}"
 
 [[gateway]]
+name="gateway_rit_foss_infra"
+enable={{ matterbridge_config.rit_foss_infra.enabled }}
+
+    [[gateway.inout]]
+    account="irc.{{ default_irc_network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.irc.channel }}"
+
+    [[gateway.inout]]
+    account="discord.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.discord.channel }}"
+
+    [[gateway.inout]]
+    account="telegram.{{ matterbridge_networks.fossrit_telegram.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.telegram.channel }}"
+
+    [[gateway.inout]]
+    account="matrix.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_infra.matrix.channel }}"
+
+[[gateway]]
 name="gateway_rit_foss"
-enable=true
+enable={{ matterbridge_config.rit_foss.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
     channel="{{ matterbridge_config.rit_foss.irc.channel }}"
 
+    # [[gateway.inout]]
+    # account="slack.{{ default_slack_team_name }}"
+    # channel="{{ matterbridge_config.rit_foss.slack.channel }}"
+
     [[gateway.inout]]
-    account="slack.{{ default_slack_team_name }}"
-    channel="{{ matterbridge_config.rit_foss.slack.channel }}"
+    account="discord.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss.discord.channel }}"
+
+    [[gateway.inout]]
+    account="telegram.{{ matterbridge_networks.fossrit_telegram.network_name }}"
+    channel="{{ matterbridge_config.rit_foss.telegram.channel }}"
+
+    [[gateway.inout]]
+    account="matrix.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss.matrix.channel }}"
+
+# this is a bridge between the #foss channels in many different RIT discord servers
+[[gateway]]
+name="gateway_rit_foss_discord_bridge"
+enable={{ matterbridge_config.rit_foss_discord_bridge.enabled }}
+
+    [[gateway.inout]]
+    account="discord.{{ matterbridge_networks.fossrit_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_discord_bridge.fossrit.channel }}"
+
+    [[gateway.inout]]
+    account="discord.{{ matterbridge_networks.rit_framework_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_discord_bridge.ritframework.channel }}"
+
+    [[gateway.inout]]
+    account="discord.{{ matterbridge_networks.ritsec_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_discord_bridge.ritsec.channel }}"
+
+    [[gateway.inout]]
+    account="discord.{{ matterbridge_networks.nexthop_discord.network_name }}"
+    channel="{{ matterbridge_config.rit_foss_discord_bridge.nexthop.channel }}"
+
 
 [[gateway]]
 name="gateway_rit_lug"
-enable=true
+enable={{ matterbridge_config.rit_lug.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
@@ -183,7 +342,7 @@ enable=true
 
 [[gateway]]
 name="gateway_rit_lug_projects"
-enable=true
+enable={{ matterbridge_config.rit_lug_projects.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
@@ -195,7 +354,7 @@ enable=true
 
 [[gateway]]
 name="gateway_rit_lug_sysadmin"
-enable=true
+enable={{ matterbridge_config.rit_lug_sysadmin.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
@@ -207,7 +366,7 @@ enable=true
 
 [[gateway]]
 name="gateway_rit_lug_teleirc"
-enable=true
+enable={{ matterbridge_config.rit_lug_teleirc.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
@@ -219,7 +378,7 @@ enable=true
 
 [[gateway]]
 name="gateway_rit_python"
-enable=true
+enable={{ matterbridge_config.rit_python.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
@@ -231,7 +390,7 @@ enable=true
 
 [[gateway]]
 name="gateway_rit_tigeros"
-enable=true
+enable={{ matterbridge_config.rit_tigeros.enabled }}
 
     [[gateway.inout]]
     account="irc.{{ default_irc_network_name }}"
