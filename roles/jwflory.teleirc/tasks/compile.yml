@@ -9,22 +9,25 @@
 - name: git clone/pull RITlug/teleirc
   git:
     repo: "https://github.com/RITlug/teleirc.git"
-    dest: "/tmp/teleirc"
-    version: "{{ default_version }}"
+    dest: "/tmp/teleirc/{{ item.value.cn }}"
+    version: "{{ item.value.version }}"
     accept_hostkey: yes
     force: yes
+  loop: "{{ bots|dict2items }}"
 
 - name: build teleirc binary
   command:
     cmd: bash build_binary.sh
-    chdir: "/tmp/teleirc/"
+    chdir: "/tmp/teleirc/{{ item.value.cn }}"
+  loop: "{{ bots|dict2items }}"
 
 - name: push teleirc binary to /usr/local/bin
   copy:
     remote_src: true
-    src: "/tmp/teleirc/teleirc"
-    dest: "/usr/local/bin/teleirc"
+    src: "/tmp/teleirc/{{ item.value.cn }}/teleirc"
+    dest: "/usr/local/bin/{{ item.value.cn }}"
     mode: 0755
     setype: bin_t
     seuser: system_u
+  loop: "{{ bots|dict2items }}"
   notify: restart teleirc
