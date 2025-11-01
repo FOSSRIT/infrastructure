@@ -1,0 +1,9 @@
+- name: import Vault-encrypted variables
+  include_vars: vault.yml
+
+- name: Render config file locally
+  template:
+    src: matterbridge.toml
+    dest: ./matterbridge.toml
+  delegate_to: localhost
+  run_once: false  # remove this if you want one config per host

@@ -1,0 +1,9 @@
+- name: Generate config locally
+  hosts: localhost
+  connection: local
+  gather_facts: true
+  tasks:
+    - name: generate matterbridge tomlfile locally
+      ansible.builtin.include_role:
+        name: matterbridge
+        tasks_from: gen_config
